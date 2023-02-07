@@ -1,8 +1,8 @@
 import React from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import styles from './Navbar.module.scss'
-import {AppLink} from "shared/ui";
-import {AppLinkTheme} from "shared/ui/AppLink/AppLink";
+import {AppLink, AppLinkTheme} from "shared/ui";
+import {ThemeSwitcher} from "widgets";
 
 export interface NavbarProps {
     className?: string;
@@ -11,12 +11,13 @@ export interface NavbarProps {
 export const Navbar = ({className}: NavbarProps) => {
     return (
         <div className={classNames(styles.navbar, {}, [className])}>
+            <ThemeSwitcher />
             <div className={styles.links}>
                 <AppLink to='/' theme={AppLinkTheme.SECONDARY}>
-                    MAIN PAGE
+                    MAIN
                 </AppLink>
                 <AppLink to='/about' theme={AppLinkTheme.SECONDARY}>
-                    ABOUT PAGE
+                    ABOUT
                 </AppLink>
             </div>
         </div>
