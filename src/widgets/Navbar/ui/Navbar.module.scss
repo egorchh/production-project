@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 50px;
+  height: var(--navbar-height);
   padding: 20px 40px;
   background: var(--inverted-bg-color);
 }
