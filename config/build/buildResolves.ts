@@ -1,16 +1,15 @@
-import webpack from "webpack";
-import {BuildOptions} from "./types/types";
+import webpack from 'webpack';
+import { BuildOptions } from './types/types';
 
 export function buildResolves(options: BuildOptions): webpack.ResolveOptions {
-
     return {
         extensions: ['.tsx', '.ts', '.js'],
         preferAbsolute: true,
         modules: [
             options.paths.src,
-            'node_modules'
+            'node_modules',
         ],
         mainFiles: ['index'],
-        alias: {}
-    }
+        alias: {},
+    };
 }
