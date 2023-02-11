@@ -1,17 +1,17 @@
 .appLink {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .primary {
-  color: var(--inverted-primary-color)
+    color: var(--inverted-primary-color);
 }
 
 .secondary {
-  color: var(--inverted-secondary-color)
+    color: var(--inverted-secondary-color);
 }
 
 .appLink:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }

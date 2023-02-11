@@ -1,20 +1,20 @@
 .navbar {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: var(--navbar-height);
-  padding: 20px 40px;
-  background: var(--inverted-bg-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--navbar-height);
+    padding: 20px 40px;
+    background: var(--inverted-bg-color);
 }
 
 .links {
-  display: flex;
-  margin-left: auto;
-  gap: 15px;
+    display: flex;
+    margin-left: auto;
+    gap: 15px;
 }
 
 .lang {
-  margin-left: 20px;
-  color: var(--inverted-secondary-color);
-  font-weight: bold;
+    margin-left: 20px;
+    color: var(--inverted-secondary-color);
+    font-weight: bold;
 }
