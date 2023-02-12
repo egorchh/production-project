@@ -15,8 +15,16 @@ export function Sidebar({ className }: SidebarProps) {
     };
 
     return (
-        <div className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}>
-            <AppButton onClick={onToggleSidebar}>Toggle</AppButton>
+        <div
+            className={
+                classNames(
+                    styles.sidebar,
+                    { [styles.collapsed]: collapsed },
+                    [className],
+                )
+            }
+        >
+            <button type="button" onClick={onToggleSidebar}>Toggle</button>
         </div>
     );
 }
