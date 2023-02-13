@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useState } from 'react';
-import { AppButton } from 'shared/ui';
+import { useTranslation } from 'react-i18next';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -9,6 +9,7 @@ interface SidebarProps {
 
 export function Sidebar({ className }: SidebarProps) {
     const [collapsed, setCollapsed] = useState(true);
+    const { t } = useTranslation();
 
     const onToggleSidebar = () => {
         setCollapsed((prevState) => !prevState);
@@ -24,7 +25,9 @@ export function Sidebar({ className }: SidebarProps) {
                 )
             }
         >
-            <button type="button" onClick={onToggleSidebar}>Toggle</button>
+            <button type="button" onClick={onToggleSidebar}>
+                {collapsed ? t('Развернуть') : t('Свернуть')}
+            </button>
         </div>
     );
 }
