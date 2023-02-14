@@ -3,12 +3,14 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
-    // preset: 'ts-jest',
-    //
-    // transform: {
-    //     '^.+\\.ts?$': 'ts-jest',
-    // },
+    preset: 'ts-jest',
+
+    transform: {
+        '^.+\\.ts?$': 'ts-jest',
+    },
 
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
@@ -24,6 +26,7 @@ export default {
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: [
         'node_modules',
+        'src',
     ],
 
     // An array of file extensions your modules use
@@ -43,6 +46,13 @@ export default {
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+
+    setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+
+    moduleNameMapper: {
+        '\\.(s?css)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [
