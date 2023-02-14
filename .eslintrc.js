@@ -10,6 +10,12 @@ module.exports = {
         'airbnb',
     ],
     overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -44,7 +50,10 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'import/no-import-module-exports': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
     globals: {
