@@ -11,11 +11,14 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "stylelint \"**/*.scss\"",
     "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
-    "test": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:loki": "npx loki test",
+    "test:loki:apply": "npx loki test",
     "analyze:prod": "analyze=1 webpack --env mode=production",
     "analyze:dev": "analyze=1 webpack --env mode=development",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
+
   },
   "author": "Egor Podolskij",
   "license": "ISC",
