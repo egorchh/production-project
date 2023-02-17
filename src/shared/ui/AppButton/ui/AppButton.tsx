@@ -4,6 +4,7 @@ import styles from './AppButton.module.scss';
 
 export enum AppButtonTheme {
     CLEAR = 'clear',
+    OUTLINE = 'outline',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,7 +13,7 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const AppButton: FC<AppButtonProps> = ({
-    className, theme = AppButtonTheme.CLEAR, children, ...otherProps
+    className, theme, children, ...otherProps
 }: AppButtonProps) => (
     <button
         type="button"

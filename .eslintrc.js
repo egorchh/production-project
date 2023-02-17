@@ -9,14 +9,12 @@ module.exports = {
         'plugin:i18next/recommended',
         'airbnb',
     ],
-    overrides: [
-        {
-            files: ['**/src/**/*.test.{ts,tsx}'],
-            rules: {
-                'i18next/no-literal-string': 'off',
-            },
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
         },
-    ],
+    }],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -25,19 +23,14 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
-        'i18next',
-    ],
+    plugins: ['react', '@typescript-eslint', 'i18next'],
     rules: {
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
         indent: ['error', 4],
-        'react/jsx-filename-extension': [
-            'error',
-            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': ['error', {
+            extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        }],
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -50,11 +43,14 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'import/no-import-module-exports': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': [
-            'error',
-            { markupOnly: true, ignoreAttribute: ['data-testid'] },
-        ],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['data-testid', 'to'],
+        }],
+        'max-len': ['error', {
+            ignoreComments: true,
+            code: 100,
+        }],
     },
     globals: {
         __IS_DEV__: true,

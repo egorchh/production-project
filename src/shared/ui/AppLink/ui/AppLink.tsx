@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
 export function AppLink({
     className,
     to,
-    theme = AppLinkTheme.PRIMARY,
+    theme,
     children,
     ...otherProps
 }: AppLinkProps) {
