@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
+import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 
 interface LangSwitcherProps {
     className?: string;
@@ -17,6 +18,7 @@ export function LangSwitcher({ className }: LangSwitcherProps) {
         <AppButton
             className={classNames('', {}, [className])}
             theme={AppButtonTheme.CLEAR}
+            size={AppButtonSize.M}
             onClick={toggleLanguage}
         >
             {t('Язык')}
