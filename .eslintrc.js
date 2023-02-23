@@ -10,9 +10,10 @@ module.exports = {
         'airbnb',
     ],
     overrides: [{
-        files: ['**/src/**/*.test.{ts,tsx}'],
+        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
         rules: {
             'i18next/no-literal-string': 'off',
+            'max-len': 'off',
         },
     }],
     parser: '@typescript-eslint/parser',
@@ -23,7 +24,12 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+    ],
     rules: {
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
@@ -51,6 +57,10 @@ module.exports = {
             ignoreComments: true,
             code: 100,
         }],
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,
