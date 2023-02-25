@@ -59,6 +59,10 @@ export const Modal = (props: ModalProps) => {
         [styles.closed]: isClosing,
     };
 
+    if (!isOpen) {
+        return null;
+    }
+
     return (
         <Portal>
             <div className={classNames(styles.modal, mods, [className])}>
