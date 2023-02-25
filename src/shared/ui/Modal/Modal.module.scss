@@ -26,9 +26,11 @@
     min-height: 400px;
     padding: 30px;
     border-radius: 15px;
-    background: #fff;
+    background: var(--bg-color);
     transition: 0.3s transform;
     transform: scale(0.5);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .opened {
