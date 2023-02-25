@@ -22,6 +22,7 @@ export const Modal = (props: ModalProps) => {
     const ANIMATION_DELAY = 300;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isOpening, setIsOpening] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const { theme } = useTheme();
 
@@ -43,10 +44,14 @@ export const Modal = (props: ModalProps) => {
 
     useEffect(() => {
         if (isOpen) {
+            timerRef.current = setTimeout(() => {
+                setIsOpening(true);
+            }, 0);
             window.addEventListener('keydown', onKeyDown);
         }
 
         return () => {
+            setIsOpening(false);
             clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
@@ -57,7 +62,7 @@ export const Modal = (props: ModalProps) => {
     };
 
     const mods: Record<string, boolean> = {
-        [styles.opened]: isOpen,
+        [styles.opened]: isOpening,
         [styles.closed]: isClosing,
     };
 

@@ -20,10 +20,9 @@
 
 .content {
     display: flex;
-    justify-content: center;
     position: relative;
-    width: 600px;
-    min-height: 400px;
+    max-width: 400px;
+    height: content-box;
     padding: 30px;
     border-radius: 15px;
     background: var(--bg-color);
