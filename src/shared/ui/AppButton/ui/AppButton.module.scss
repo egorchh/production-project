@@ -63,3 +63,8 @@
     background: var(--inverted-bg-color);
     color: var(--inverted-secondary-color);
 }
+
+.disabled {
+    cursor: default;
+    opacity: 0.3;
+}

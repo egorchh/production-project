@@ -72,6 +72,14 @@ BackgroundInverted.args = {
     theme: AppButtonTheme.BACKGROUND_INVERTED,
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Click',
+    theme: AppButtonTheme.BACKGROUND_INVERTED,
+    size: AppButtonSize.XL,
+    disabled: true,
+};
+
 export const Square = Template.bind({});
 Square.args = {
     children: '>',
