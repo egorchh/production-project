@@ -4,18 +4,26 @@ import { AppButton, AppButtonTheme } from 'shared/ui';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { Input } from 'shared/ui/Input/ui/Input';
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import styles from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const initialReducers: ReducersList = {
+    loginForm: loginReducer,
+};
+
+const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation('loginForm');
     const dispatch = useDispatch();
     const {
@@ -35,32 +43,36 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch, password, username]);
 
     return (
-        <div className={classNames(styles.loginForm, {}, [className])}>
-            <Text title={t('Форма авторизации')} />
-            {error && <Text text={t('Неверные данные')} theme={TextTheme.ERROR} />}
-            <Input
-                className={styles.input}
-                autoFocus
-                onChange={onChangeUsername}
-                type="text"
-                placeholder={t('Логин')}
-                value={username}
-            />
-            <Input
-                className={styles.input}
-                onChange={onChangePassword}
-                type="password"
-                placeholder={t('Пароль')}
-                value={password}
-            />
-            <AppButton
-                theme={AppButtonTheme.BACKGROUND_INVERTED}
-                size={AppButtonSize.XL}
-                onClick={onSubmitHandler}
-                disabled={isLoading}
-            >
-                {t('Войти', { ns: 'translation' })}
-            </AppButton>
-        </div>
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+            <div className={classNames(styles.loginForm, {}, [className])}>
+                <Text title={t('Форма авторизации')} />
+                {error && <Text text={t('Неверные данные')} theme={TextTheme.ERROR} />}
+                <Input
+                    className={styles.input}
+                    autoFocus
+                    onChange={onChangeUsername}
+                    type="text"
+                    placeholder={t('Логин')}
+                    value={username}
+                />
+                <Input
+                    className={styles.input}
+                    onChange={onChangePassword}
+                    type="password"
+                    placeholder={t('Пароль')}
+                    value={password}
+                />
+                <AppButton
+                    theme={AppButtonTheme.BACKGROUND_INVERTED}
+                    size={AppButtonSize.XL}
+                    onClick={onSubmitHandler}
+                    disabled={isLoading}
+                >
+                    {t('Войти', { ns: 'translation' })}
+                </AppButton>
+            </div>
+        </DynamicModuleLoader>
     );
 });
+
+export default LoginForm;
