@@ -12,5 +12,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Egor",
+    "lastname": "Podolskij",
+    "age": 21,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint-Petersburg",
+    "username": "admin",
+    "avatar": "https://s13.stc.yc.kpcdn.net/share/i/instagram/B44solahwlo/wr-1280.webp"
+  }
 }

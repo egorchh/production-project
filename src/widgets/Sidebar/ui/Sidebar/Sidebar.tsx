@@ -1,31 +1,37 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { memo, useMemo, useState } from 'react';
 import {
-    AppButton, AppButtonTheme, AppLink, AppLinkTheme,
+    AppButton, AppButtonTheme,
 } from 'shared/ui';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
-
-import MainIconDark from 'shared/assets/icons/main-page-dark.svg';
-import MainIconLight from 'shared/assets/icons/main-page-light.svg';
-import AboutIconDark from 'shared/assets/icons/about-page-dark.svg';
-import AboutIconLight from 'shared/assets/icons/about-page-light.svg';
+import { SidebarItemsList } from '../../model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
     className?: string;
 }
 
-export function Sidebar({ className }: SidebarProps) {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(true);
-    const { t } = useTranslation();
     const { theme } = useTheme();
 
     const onToggleSidebar = () => {
         setCollapsed((prevState) => !prevState);
     };
+
+    const listLinks = useMemo(
+        () => SidebarItemsList.map((item) => (
+            <SidebarItem
+                key={item.path}
+                item={item}
+                theme={theme}
+                collapsed={collapsed}
+            />
+        )),
+        [collapsed, theme],
+    );
 
     return (
         <div
@@ -39,26 +45,7 @@ export function Sidebar({ className }: SidebarProps) {
             }
         >
             <div className={styles.links}>
-                <AppLink to="/" theme={AppLinkTheme.SECONDARY}>
-                    {
-                        theme === Theme.DARK
-                            ? <MainIconDark className={styles.icon} />
-                            : <MainIconLight className={styles.icon} />
-                    }
-                    <p className={styles.text}>
-                        {t('MAIN')}
-                    </p>
-                </AppLink>
-                <AppLink to="/about" theme={AppLinkTheme.SECONDARY}>
-                    {
-                        theme === Theme.DARK
-                            ? <AboutIconDark className={styles.icon} />
-                            : <AboutIconLight className={styles.icon} />
-                    }
-                    <p className={styles.text}>
-                        {t('ABOUT')}
-                    </p>
-                </AppLink>
+                {listLinks}
             </div>
             <AppButton
                 data-testid="sidebar-toggle"
@@ -73,4 +60,4 @@ export function Sidebar({ className }: SidebarProps) {
             </AppButton>
         </div>
     );
-}
+});

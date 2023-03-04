@@ -9,21 +9,6 @@
     transition: width 0.3s;
 }
 
-.icon {
-    display: none;
-}
-
-.text {
-    display: block;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-}
-
 .button {
     position: absolute;
     bottom: 0;
@@ -33,12 +18,4 @@
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
-
-    .icon {
-        display: block;
-    }
-
-    .text {
-        display: none;
-    }
 }

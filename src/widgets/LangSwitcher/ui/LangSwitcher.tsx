@@ -2,12 +2,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
+import { memo } from 'react';
 
 interface LangSwitcherProps {
     className?: string;
 }
 
-export function LangSwitcher({ className }: LangSwitcherProps) {
+export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggleLanguage = async () => {
@@ -24,4 +25,4 @@ export function LangSwitcher({ className }: LangSwitcherProps) {
             {t('Язык')}
         </AppButton>
     );
-}
+});

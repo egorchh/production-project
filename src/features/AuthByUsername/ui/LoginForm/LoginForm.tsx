@@ -4,28 +4,30 @@ import { AppButton, AppButtonTheme } from 'shared/ui';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { Input } from 'shared/ui/Input/ui/Input';
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState';
 import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import styles from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation('loginForm');
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const {
         username, password, isLoading, error,
     } = useSelector(getLoginState);
@@ -38,9 +40,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onSubmitHandler = useCallback(() => {
-        dispatch(loginByUsername({ username, password }));
-    }, [dispatch, password, username]);
+    const onSubmitHandler = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }));
+        if (result?.meta.requestStatus) {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

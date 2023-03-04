@@ -1,0 +1,29 @@
+.sidebarItem {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebarItem:not(:first-child) {
+    margin-top: 10px;
+}
+
+.icon {
+    display: none;
+}
+
+.text {
+    display: block;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .icon {
+        display: block;
+    }
+
+    .text {
+        display: none;
+    }
+}
