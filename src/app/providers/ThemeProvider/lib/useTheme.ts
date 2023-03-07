@@ -14,11 +14,11 @@ export function useTheme(): UseThemeResult {
 
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
 
-        setTheme(newTheme);
+        setTheme?.(newTheme);
     };
 
     return {
-        theme,
+        theme: theme || Theme.LIGHT,
         toggleTheme,
     };
 }

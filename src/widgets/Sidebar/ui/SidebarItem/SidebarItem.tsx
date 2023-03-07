@@ -7,15 +7,18 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-    item?: SidebarItemInterface
-    theme?: Theme
+    item: SidebarItemInterface
     collapsed: boolean
+    theme?: Theme
 }
 
 export const SidebarItem = ({ item, theme, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
     const {
-        path, text, IconLight, IconDark,
+        path,
+        text,
+        IconLight,
+        IconDark,
     } = item;
 
     return (

@@ -8,4 +8,4 @@ const initialState: LoginSchema = {
     error: '',
 };
 
-export const getLoginState = (state: StateSchema) => state?.loginForm || initialState;
+export const getLoginState = (state: StateSchema | undefined) => state?.loginForm || initialState;

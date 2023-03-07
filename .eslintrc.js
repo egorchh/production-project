@@ -57,6 +57,7 @@ module.exports = {
             ignoreComments: true,
             code: 100,
         }],
+        'no-undef': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
         'react-hooks/rules-of-hooks': 'error',
@@ -65,5 +66,6 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
 };

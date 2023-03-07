@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     ButtonHTMLAttributes, memo,
 } from 'react';
@@ -25,10 +25,18 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean;
 }
 
-export const AppButton = memo<AppButtonProps>(({
-    className, theme, children, square, size, disabled, ...otherProps
-}: AppButtonProps) => {
-    const mods = {
+export const AppButton = memo<AppButtonProps>((
+    {
+        className,
+        theme = AppButtonTheme.CLEAR,
+        children,
+        square,
+        size = AppButtonSize.L,
+        disabled,
+        ...otherProps
+    }: AppButtonProps,
+) => {
+    const mods: Mods = {
         [styles.square]: square,
         [styles.disabled]: disabled,
     };
