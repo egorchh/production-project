@@ -8,6 +8,8 @@ export enum AppButtonTheme {
     CLEAR = 'clear',
     OUTLINE = 'outline',
     BACKGROUND = 'background',
+    BACKGROUND_CANCEL = 'background-cancel',
+    BACKGROUND_SUCCESS = 'background-success',
     BACKGROUND_INVERTED = 'background-inverted',
 }
 

@@ -2,7 +2,7 @@ import 'app/styles/index.scss';
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { profileReducer } from 'entities/Profile';
+import { profileReducer } from 'features/EditableProfileCard';
 import { ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducersList = {

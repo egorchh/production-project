@@ -1,7 +1,3 @@
-.container {
-    text-align: center;
-}
-
 .title {
     font: var(--font-l);
     color: var(--primary-color);
@@ -20,4 +16,16 @@
     .text {
         color: var(--red-light);
     }
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
 }

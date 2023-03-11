@@ -1,0 +1,15 @@
+{
+  "ErrorTitle": "An error occurred while loading the profile",
+  "ErrorDescription": "Try refreshing the page",
+  "EditProfile": "Edit profile",
+  "CancelEditing": "Cancel",
+  "SaveEditing": "Save",
+  "Name": "Name",
+  "SecondName": "Second name",
+  "Age": "Age",
+  "Country": "Country",
+  "City": "City",
+  "Currency": "Currency",
+  "Avatar": "Image url",
+  "Username": "Username"
+}

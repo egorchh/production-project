@@ -59,6 +59,16 @@
     color: var(--secondary-color);
 }
 
+.background-cancel {
+    background: var(--red-light);
+    color: var(--white);
+}
+
+.background-success {
+    background: var(--green-success);
+    color: var(--white);
+}
+
 .background-inverted {
     background: var(--inverted-bg-color);
     color: var(--inverted-secondary-color);

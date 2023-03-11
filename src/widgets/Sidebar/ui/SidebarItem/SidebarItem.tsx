@@ -4,6 +4,8 @@ import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import React from 'react';
 import { SidebarItemInterface } from 'widgets/Sidebar/model/items';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import styles from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
@@ -20,6 +22,11 @@ export const SidebarItem = ({ item, theme, collapsed }: SidebarItemProps) => {
         IconLight,
         IconDark,
     } = item;
+    const isAuth = useSelector(getUserAuthData);
+
+    if (item.authOnly && !isAuth) {
+        return null;
+    }
 
     return (
         <AppLink

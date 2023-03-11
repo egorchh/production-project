@@ -4,7 +4,7 @@ import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'entities/Profile';
+import { ProfileSchema } from 'features/EditableProfileCard';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router';
 
@@ -38,5 +38,6 @@ export interface ThunkExtraArgs {
 export type ThunkConfig<T> = {
     rejectValue: T,
     extra: ThunkExtraArgs,
-    dispatch?: Dispatch
+    dispatch?: Dispatch,
+    state: StateSchema
 }

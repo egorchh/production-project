@@ -1,0 +1,23 @@
+.selectWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.select {
+    width: 100%;
+    padding: 10px 20px;
+    border: 2px solid var(--inverted-bg-color);
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: var(--white);
+}
+
+.select:disabled {
+    border: 2px solid var(--grey-disable);
+}
+
+.label {
+    max-width: 300px;
+}

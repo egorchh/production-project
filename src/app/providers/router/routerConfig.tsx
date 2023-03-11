@@ -5,7 +5,11 @@ import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
 import { Page404 } from 'pages/Page404';
 import { ProfilePage } from 'pages/ProfilePage';
 
-export const routerConfig: Array<RouteProps> = [
+type AppRouterProps = RouteProps & {
+    authOnly?: boolean;
+}
+
+export const routerConfig: Array<AppRouterProps> = [
     {
         path: AppRoutes.MAIN,
         element: <MainPage />,
@@ -17,6 +21,7 @@ export const routerConfig: Array<RouteProps> = [
     {
         path: AppRoutes.PROFILE,
         element: <ProfilePage />,
+        authOnly: true,
     },
     {
         path: AppRoutes.PAGE404,

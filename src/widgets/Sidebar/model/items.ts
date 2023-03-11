@@ -12,6 +12,7 @@ export interface SidebarItemInterface {
     text: string;
     IconLight: React.VFC<React.SVGProps<SVGSVGElement>>;
     IconDark: React.VFC<React.SVGProps<SVGSVGElement>>;
+    authOnly?: boolean;
 }
 
 export const SidebarItemsList: SidebarItemInterface[] = [
@@ -32,5 +33,6 @@ export const SidebarItemsList: SidebarItemInterface[] = [
         IconLight: ProfileIconLight,
         IconDark: ProfileIconDark,
         text: 'PROFILE',
+        authOnly: true,
     },
 ];

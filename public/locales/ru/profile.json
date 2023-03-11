@@ -1,0 +1,15 @@
+{
+  "ErrorTitle": "Произошла ошибка при загрузке профиля",
+  "ErrorDescription": "Попробуйте обновить страницу",
+  "EditProfile": "Редактировать профиль",
+  "CancelEditing": "Отменить",
+  "SaveEditing": "Сохранить",
+  "Name": "Имя",
+  "SecondName": "Фамилия",
+  "Age": "Возраст",
+  "Country": "Страна",
+  "City": "Город",
+  "Currency": "Валюта",
+  "Avatar": "Адрес картинки",
+  "Username": "Никнейм"
+}

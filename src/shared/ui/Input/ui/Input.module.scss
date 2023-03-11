@@ -2,5 +2,10 @@
     padding: 10px 20px;
     border: 2px solid var(--inverted-bg-color);
     border-radius: 10px;
-    background: #fff;
+    background: var(--white);
+}
+
+.readonly {
+    border: 2px solid var(--grey-disable);
+    color: var(--grey-disable);
 }

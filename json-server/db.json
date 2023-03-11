@@ -1,9 +1,17 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": "1" }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -13,13 +21,13 @@
     }
   ],
   "profile": {
-    "first": "Egor",
-    "lastname": "Podolskij",
-    "age": 21,
+    "first": "Egor3",
+    "lastname": "Podolskiy213",
+    "age": 212,
     "currency": "RUB",
-    "country": "Russia",
+    "country": "Kazakhstan",
     "city": "Saint-Petersburg",
-    "username": "admin",
+    "username": "Гладиатор_228",
     "avatar": "https://s13.stc.yc.kpcdn.net/share/i/instagram/B44solahwlo/wr-1280.webp"
   }
 }
