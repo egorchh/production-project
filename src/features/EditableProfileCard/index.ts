@@ -1,6 +1,7 @@
 export {
     Profile,
     ProfileSchema,
+    ValidateProfileError,
 } from '../../features/EditableProfileCard/model/types/profile';
 
 export {

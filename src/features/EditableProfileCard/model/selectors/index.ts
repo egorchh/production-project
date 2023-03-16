@@ -17,3 +17,7 @@ export {
 export {
     getProfileEditedData,
 } from './getProfileEditedData/getProfileEditedData';
+
+export {
+    getProfileValidateErrors,
+} from './getProfileValidateErrors/getProfileValidateErrors';
