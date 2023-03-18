@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/types';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const fileLoader = {
@@ -23,9 +24,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
+    const babelLoader = buildBabelLoader(isDev);
+
     const scssLoader = buildCssLoader(isDev);
 
     return [
+        babelLoader,
         typescriptLoader,
         scssLoader,
         svgLoader,

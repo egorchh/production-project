@@ -1,0 +1,19 @@
+{
+  "Age": "Age",
+  "Avatar": "Avatar",
+  "CancelEditing": "CancelEditing",
+  "City": "City",
+  "EditProfile": "EditProfile",
+  "ErrorDescription": "ErrorDescription",
+  "ErrorTitle": "ErrorTitle",
+  "Name": "Name",
+  "SaveEditing": "SaveEditing",
+  "SecondName": "SecondName",
+  "Username": "Username",
+  "Заголовок профиля": "Заголовок профиля",
+  "Некорректное имя или фамилия": "Некорректное имя или фамилия",
+  "Некорректный возраст": "Некорректный возраст",
+  "Некорректный никнейм": "Некорректный никнейм",
+  "Ошибка загрузки данных": "Ошибка загрузки данных",
+  "Ошибка сервера": "Ошибка сервера"
+}
