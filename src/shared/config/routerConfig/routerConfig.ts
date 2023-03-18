@@ -9,5 +9,7 @@ export enum AppRoutes {
     ABOUT = 'about',
 
     PROFILE = 'profile',
+    ARTICLES = 'articles',
+    ARTICLE_DETAILS = 'articles/', // + :id
     PAGE404 = '*'
 }

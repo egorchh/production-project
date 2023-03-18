@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { AppLink, AppLinkTheme } from 'shared/ui';
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import React from 'react';
 import { SidebarItemInterface } from 'widgets/Sidebar/model/items';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -11,16 +10,14 @@ import styles from './SidebarItem.module.scss';
 interface SidebarItemProps {
     item: SidebarItemInterface
     collapsed: boolean
-    theme?: Theme
 }
 
-export const SidebarItem = ({ item, theme, collapsed }: SidebarItemProps) => {
+export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
     const {
         path,
         text,
-        IconLight,
-        IconDark,
+        Icon,
     } = item;
     const isAuth = useSelector(getUserAuthData);
 
@@ -34,11 +31,7 @@ export const SidebarItem = ({ item, theme, collapsed }: SidebarItemProps) => {
             to={path}
             theme={AppLinkTheme.SECONDARY}
         >
-            {
-                theme === Theme.DARK
-                    ? <IconDark className={styles.icon} />
-                    : <IconLight className={styles.icon} />
-            }
+            <Icon className={styles.icon} />
             <p className={styles.text}>
                 {t(text)}
             </p>

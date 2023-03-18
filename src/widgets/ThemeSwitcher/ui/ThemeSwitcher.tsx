@@ -1,18 +1,17 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import React, { memo } from 'react';
-import DarkThemeIcon from 'shared/assets/icons/theme-dark.svg';
-import LightThemeIcon from 'shared/assets/icons/theme-light.svg';
-import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import ThemeIcon from 'shared/assets/icons/theme.svg';
 import { AppButton, AppButtonTheme } from 'shared/ui';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
+import styles from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
     className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-    const { theme, toggleTheme } = useTheme();
+    const { toggleTheme } = useTheme();
 
     return (
         <AppButton
@@ -21,7 +20,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             size={AppButtonSize.M}
             onClick={toggleTheme}
         >
-            {theme === Theme.LIGHT ? <LightThemeIcon /> : <DarkThemeIcon />}
+            <ThemeIcon className={styles.icon} />
         </AppButton>
     );
 });

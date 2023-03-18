@@ -5,11 +5,12 @@
 }
 
 .sidebarItem:not(:first-child) {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .icon {
     display: none;
+    fill: var(--inverted-secondary-color);
 }
 
 .text {

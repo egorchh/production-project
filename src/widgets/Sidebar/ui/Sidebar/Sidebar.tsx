@@ -26,11 +26,10 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             <SidebarItem
                 key={item.path}
                 item={item}
-                theme={theme}
                 collapsed={collapsed}
             />
         )),
-        [collapsed, theme],
+        [collapsed],
     );
 
     return (
