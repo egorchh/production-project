@@ -2,6 +2,12 @@
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
+
+    &:hover {
+        opacity: 0.7;
+        fill-opacity: 0.7;
+        text-decoration: underline;
+    }
 }
 
 .primary {
@@ -10,8 +16,4 @@
 
 .secondary {
     color: var(--inverted-secondary-color);
-}
-
-.appLink:hover {
-    text-decoration: underline;
 }

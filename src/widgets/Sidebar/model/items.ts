@@ -8,30 +8,30 @@ import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
 export interface SidebarItemInterface {
     path: string;
     text: string;
-    Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
+    SidebarIcon: React.VFC<React.SVGProps<SVGSVGElement>>;
     authOnly?: boolean;
 }
 
 export const SidebarItemsList: SidebarItemInterface[] = [
     {
         path: AppRoutes.MAIN,
-        Icon: MainIcon,
+        SidebarIcon: MainIcon,
         text: 'MAIN',
     },
     {
         path: AppRoutes.ABOUT,
-        Icon: AboutIcon,
+        SidebarIcon: AboutIcon,
         text: 'ABOUT',
     },
     {
         path: AppRoutes.PROFILE,
-        Icon: ProfileIcon,
+        SidebarIcon: ProfileIcon,
         text: 'PROFILE',
         authOnly: true,
     },
     {
         path: AppRoutes.ARTICLES,
-        Icon: ArticleIcon,
+        SidebarIcon: ArticleIcon,
         text: 'ARTICLES',
         authOnly: true,
     },

@@ -1,8 +1,17 @@
 .app_pink_theme {
-    --bg-color: #a22293;
+    --bg-color: #69005a;
     --inverted-bg-color: #fbf4fa;
     --primary-color: #fbf4fa;
-    --secondary-color: #a85cff;
+    --secondary-color: #e8dcfc;
     --inverted-primary-color: #a85cff;
     --inverted-secondary-color: #a22293;
+
+    // skeleton
+
+    --skeleton-shadow: #673062;
+    --skeleton-color: #f5a9ec;
+
+    // code
+
+    --code-bg: #fff;
 }

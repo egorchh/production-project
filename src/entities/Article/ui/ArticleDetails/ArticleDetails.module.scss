@@ -1,0 +1,50 @@
+.articleDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skeletonWrapper {
+    padding: 20px 0 70px;
+}
+
+.skeletonLogo {
+    margin: 0 auto;
+    align-self: center;
+}
+
+.skeleton:not(:first-child) {
+    margin-top: 28px;
+}
+
+.viewsBlock,
+.dateBlock {
+    display: flex;
+}
+
+.info {
+    align-self: self-start;
+    margin-top: 10px;
+}
+
+.icon {
+    margin-right: 10px;
+    fill: var(--inverted-bg-color);
+}
+
+.text {
+    color: var(--inverted-bg-color);
+}
+
+.dateBlock {
+    margin-top: 6px;
+}
+
+.infoBlocks {
+    margin-top: 10px;
+}
+
+.blocksWrapper {
+    margin-top: 20px;
+}

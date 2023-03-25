@@ -8,6 +8,11 @@
     line-height: 1;
     border-radius: 5px;
     border: none;
+
+    &:hover {
+        opacity: 0.7;
+        fill-opacity: 0.7;
+    }
 }
 
 .square.size_m {

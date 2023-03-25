@@ -5,6 +5,7 @@ import { SidebarItemInterface } from 'widgets/Sidebar/model/items';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
+import { Icon } from 'shared/ui/Icon/Icon';
 import styles from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
@@ -17,7 +18,7 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
     const {
         path,
         text,
-        Icon,
+        SidebarIcon,
     } = item;
     const isAuth = useSelector(getUserAuthData);
 
@@ -31,7 +32,7 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
             to={path}
             theme={AppLinkTheme.SECONDARY}
         >
-            <Icon className={styles.icon} />
+            <Icon Svg={SidebarIcon} />
             <p className={styles.text}>
                 {t(text)}
             </p>
