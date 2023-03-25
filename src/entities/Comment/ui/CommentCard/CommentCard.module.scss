@@ -1,0 +1,23 @@
+.commentCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid var(--inverted-bg-color);
+    min-height: 70px;
+    width: 100%;
+    padding: 14px 20px;
+}
+
+.userInfoWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.avatar {
+    margin-right: 8px;
+}
+
+.usernameSkeleton {
+    margin-left: 10px;
+}

@@ -1,5 +1,4 @@
 import { UserSchema } from 'entities/User';
-import { CounterSchema } from 'entities/Counter';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
@@ -8,15 +7,16 @@ import { ProfileSchema } from 'features/EditableProfileCard';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 
 export interface StateSchema {
     user: UserSchema;
-    counter: CounterSchema;
 
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema
+    articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

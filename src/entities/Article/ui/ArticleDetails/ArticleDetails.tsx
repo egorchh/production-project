@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
@@ -15,6 +15,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-line.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
     ArticleCodeBlockComponent,
 } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
@@ -80,11 +81,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     let content;
 

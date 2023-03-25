@@ -171,13 +171,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://s13.stc.yc.kpcdn.net/share/i/instagram/B44solahwlo/wr-1280.webp"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role":  "USER"
+      "role":  "USER",
+      "avatar": "https://avatars.mds.yandex.net/i?id=ec42f6ea43253d995b435c438158fdfc0ce74861-8309375-images-thumbs&n=13"
     }
   ],
   "profile": {
