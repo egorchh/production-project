@@ -6,6 +6,11 @@ import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 const data = {
     id: '1',
     title: 'title',
+    user: {
+        username: 'egoorch',
+        id: '1',
+        avatar: 'https://s13.stc.yc.kpcdn.net/share/i/instagram/B44solahwlo/wr-1280.webp',
+    },
     subtitle: 'subtitle',
     img: 'img',
     views: 2,

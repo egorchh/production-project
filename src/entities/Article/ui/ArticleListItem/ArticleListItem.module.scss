@@ -1,0 +1,133 @@
+.LIST {
+    border: 2px solid var(--inverted-bg-color);
+    padding: 40px;
+    border-radius: 20px;
+
+    .articlesWrapperList {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .topSide {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .userInfo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        margin: 20px 0;
+    }
+
+    .textContent {
+        max-height: 170px;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .views {
+        display: flex;
+        gap: 10px;
+    }
+
+    .viewIcon {
+        fill: var(--inverted-bg-color);
+    }
+}
+
+.PLATE {
+    transition: 0.3s;
+    cursor: pointer;
+
+    .datePlate {
+        position: absolute;
+        top: 30px;
+        right: -10px;
+        padding: 4px 8px;
+        background-color: var(--inverted-bg-color);
+        border-radius: 4px;
+        opacity: 0;
+    }
+
+    &:hover {
+        .datePlate {
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        transform: scale(1.01);
+    }
+
+    .articlesWrapperPlate {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 240px;
+        max-height: 400px;
+        border-radius: 10px;
+        border: 2px solid var(--inverted-bg-color);
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .date {
+        color: var(--bg-color);
+    }
+
+    .infoWrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-top: 2px solid var(--inverted-bg-color);
+        padding-top: 20px;
+    }
+
+    .topSide {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .types p {
+        max-width: 100px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .views {
+        display: flex;
+        gap: 10px;
+    }
+
+    .viewIcon {
+        fill: var(--inverted-bg-color);
+    }
+}

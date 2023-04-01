@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { CommentList } from 'entities/Comment';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addComment';
+import { AppButton } from 'shared/ui';
 import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -51,6 +52,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
+    const onGoBackToArticles = useCallback(() => {
+        window.history.back();
+    }, []);
+
     if (!id && __PROJECT__ !== 'storybook') {
         return (
             <div className={classNames(styles.articleDetails, {}, [className])}>
@@ -62,6 +67,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
+                <AppButton onClick={onGoBackToArticles}>
+                    {t('Назад')}
+                </AppButton>
                 <ArticleDetails id={id || '1'} />
                 <Text
                     className={styles.commentsTitle}
