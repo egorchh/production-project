@@ -11,7 +11,7 @@ import {
     profileActions,
     profileReducer, ValidateProfileError,
 } from 'features/EditableProfileCard';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ProfileCard } from 'entities/Profile';
@@ -20,6 +20,8 @@ import { Country } from 'entities/Country/model/types/country';
 import { getProfileValidateErrors } from 'features/EditableProfileCard/model/selectors';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import styles from './ProfilePage.module.scss';
 
@@ -38,6 +40,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const validateErrors = useSelector(getProfileValidateErrors);
     const { t } = useTranslation('profile');
+    const { id = '1' } = useParams<{id: string}>();
 
     const validateErrorsMapping = {
         [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),
@@ -47,11 +50,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_USER_AGE]: t('Некорректный возраст'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData(id));
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({

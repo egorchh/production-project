@@ -4,7 +4,8 @@ import {
     AppButton, AppButtonTheme,
 } from 'shared/ui';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
-import { SidebarItemsList } from '../../model/items';
+import { useSelector } from 'react-redux';
+import { getSidebarItems } from 'widgets/Sidebar/model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
 
@@ -14,20 +15,21 @@ interface SidebarProps {
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(true);
+    const sidebarItemList = useSelector(getSidebarItems);
 
     const onToggleSidebar = () => {
         setCollapsed((prevState) => !prevState);
     };
 
     const listLinks = useMemo(
-        () => SidebarItemsList.map((item) => (
+        () => sidebarItemList.map((item) => (
             <SidebarItem
                 key={item.path}
                 item={item}
                 collapsed={collapsed}
             />
         )),
-        [collapsed],
+        [collapsed, sidebarItemList],
     );
 
     return (

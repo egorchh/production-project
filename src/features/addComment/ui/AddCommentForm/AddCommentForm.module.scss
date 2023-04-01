@@ -1,0 +1,22 @@
+.addCommentForm {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input {
+    width: 100%;
+    border-radius: 0;
+    border-right: none;
+    height: 70px;
+}
+
+.button {
+    border-radius: 0;
+    padding: 0 25px;
+}
+
+.icon {
+    fill: var(--inverted-bg-color);
+}

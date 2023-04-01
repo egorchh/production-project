@@ -3,13 +3,15 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { AppLink } from 'shared/ui';
+import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
 import styles from './CommentCard.module.scss';
 import { Comment } from '../../model/types/comment';
 
 interface CommentCardProps {
   className?: string;
-  comment: Comment;
-  isLoading?: boolean;
+  comment?: Comment;
+  isLoading?: boolean
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
@@ -30,15 +32,22 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
         );
     }
 
+    if (!comment) {
+        return null;
+    }
+
     return (
         <div className={classNames(styles.commentCard, {}, [className])}>
-            <div className={styles.userInfoWrapper}>
+            <AppLink
+                to={`${AppRoutes.PROFILE}${comment.user.id}`}
+                className={styles.userInfoWrapper}
+            >
                 {
                     comment.user.avatar
                     && <Avatar src={comment.user.avatar} className={styles.avatar} size={40} />
                 }
                 <Text text={comment.user.username} />
-            </div>
+            </AppLink>
             <Text text={comment.text} align={TextAlign.LEFT} />
         </div>
     );

@@ -6,10 +6,11 @@ import { useSelector } from 'react-redux';
 import {
     getProfileReadonly,
     updateProfileData,
-    profileActions,
+    profileActions, getProfileData,
 } from 'features/EditableProfileCard';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
+import { getUserAuthData } from 'entities/User';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -21,6 +22,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     const dispatch = useAppDispatch();
     const readonly = useSelector(getProfileReadonly);
 
+    const authData = useSelector(getUserAuthData);
+    const profileData = useSelector(getProfileData);
+    const canEdipProfile = authData?.id === profileData?.id;
+
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false));
     }, [dispatch]);
@@ -30,41 +35,45 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     const onSaveData = useCallback(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(updateProfileData());
+        if (__PROJECT__ !== 'storybook' && profileData?.id) {
+            dispatch(updateProfileData(profileData.id));
         }
-    }, [dispatch]);
+    }, [dispatch, profileData]);
 
     return (
         <div className={classNames(styles.profilePageHeader, {}, [className])}>
             <Text className={styles.title} title={t('Заголовок профиля')} />
-            {readonly
-                ? (
-                    <AppButton
-                        theme={AppButtonTheme.OUTLINE}
-                        onClick={onEdit}
-                    >
-                        {t('EditProfile')}
-                    </AppButton>
-                )
-                : (
-                    <div className={styles.buttons}>
-                        <AppButton
-                            className={styles.button}
-                            theme={AppButtonTheme.BACKGROUND_SUCCESS}
-                            onClick={onSaveData}
-                        >
-                            {t('SaveEditing')}
-                        </AppButton>
-                        <AppButton
-                            className={styles.button}
-                            theme={AppButtonTheme.BACKGROUND_CANCEL}
-                            onClick={onCancelEdit}
-                        >
-                            {t('CancelEditing')}
-                        </AppButton>
-                    </div>
-                )}
+            {canEdipProfile && (
+                <div>
+                    {readonly
+                        ? (
+                            <AppButton
+                                theme={AppButtonTheme.OUTLINE}
+                                onClick={onEdit}
+                            >
+                                {t('EditProfile')}
+                            </AppButton>
+                        )
+                        : (
+                            <div className={styles.buttons}>
+                                <AppButton
+                                    className={styles.button}
+                                    theme={AppButtonTheme.BACKGROUND_SUCCESS}
+                                    onClick={onSaveData}
+                                >
+                                    {t('SaveEditing')}
+                                </AppButton>
+                                <AppButton
+                                    className={styles.button}
+                                    theme={AppButtonTheme.BACKGROUND_CANCEL}
+                                    onClick={onCancelEdit}
+                                >
+                                    {t('CancelEditing')}
+                                </AppButton>
+                            </div>
+                        )}
+                </div>
+            )}
         </div>
     );
 };

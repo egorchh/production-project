@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -12,9 +12,13 @@ import {
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { AddCommentForm } from 'features/addComment';
+import {
+    addCommentForArticle,
+} from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import styles from './ArticleDetailsPage.module.scss';
 import {
     articleDetailsCommentsReducer,
@@ -43,6 +47,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         dispatch(fetchCommentsByArticleId(id));
     });
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     if (!id && __PROJECT__ !== 'storybook') {
         return (
             <div className={classNames(styles.articleDetails, {}, [className])}>
@@ -60,8 +68,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     align={TextAlign.LEFT}
                     title={`${t('Комментарии')}:`}
                 />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
-                    comments={comments}
+                    comments={comments.reverse()}
                     isLoading={isLoading}
                 />
             </div>

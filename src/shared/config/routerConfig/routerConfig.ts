@@ -8,7 +8,7 @@ export enum AppRoutes {
     MAIN = '/',
     ABOUT = 'about',
 
-    PROFILE = 'profile',
+    PROFILE = '/profile/', // + :id
     ARTICLES = 'articles',
     ARTICLE_DETAILS = 'articles/', // + :id
     PAGE404 = '*'

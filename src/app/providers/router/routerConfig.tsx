@@ -1,6 +1,9 @@
 import { MainPage } from 'pages/MainPage';
 import { AboutPage } from 'pages/AboutPage';
-import { AppRouterProps, AppRoutes } from 'shared/config/routerConfig/routerConfig';
+import {
+    AppRouterProps,
+    AppRoutes,
+} from 'shared/config/routerConfig/routerConfig';
 import { Page404 } from 'pages/Page404';
 import { ProfilePage } from 'pages/ProfilePage';
 import { ArticlesPage } from 'pages/ArticlesPage';
@@ -16,7 +19,7 @@ export const routerConfig: Array<AppRouterProps> = [
         element: <AboutPage />,
     },
     {
-        path: AppRoutes.PROFILE,
+        path: `${AppRoutes.PROFILE}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },
