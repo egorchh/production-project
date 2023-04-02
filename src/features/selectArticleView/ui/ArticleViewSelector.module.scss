@@ -1,0 +1,11 @@
+.articleViewSelector {
+    display: flex;
+}
+
+.icon {
+    fill: var(--inverted-bg-color);
+}
+
+.selectedIcon {
+    fill: deepskyblue;
+}

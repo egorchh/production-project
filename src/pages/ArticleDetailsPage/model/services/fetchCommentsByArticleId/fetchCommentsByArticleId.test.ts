@@ -28,7 +28,7 @@ const state: DeepPartial<StateSchema> = {
     },
 };
 
-describe('addCommentForArticle.test', () => {
+describe('fetchCommentsByArticleId.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchCommentsByArticleId, state);
         thunk.api.get.mockReturnValue(Promise.resolve({ data: comments }));

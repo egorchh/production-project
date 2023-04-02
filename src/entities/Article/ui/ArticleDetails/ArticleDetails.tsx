@@ -30,7 +30,7 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData';
-import { fetchArticleById } from '../../model/servises/fetchArticleById/fetchArticleById';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import styles from './ArticleDetails.module.scss';
 

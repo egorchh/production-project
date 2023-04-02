@@ -9,6 +9,7 @@ import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentSchema } from 'features/addComment';
+import { ArticlesPageSchema } from 'pages/ArticlesPage';
 
 export interface StateSchema {
     user: UserSchema;
@@ -19,6 +20,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addComment?: AddCommentSchema;
+    articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

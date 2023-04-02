@@ -71,7 +71,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         {t('Читать далее')}
                     </AppButton>
                     <div className={styles.views}>
-                        <Text className={styles.viewCount} text={article.views.toString()} />
+                        <Text className={styles.viewCount} text={`${article.views}`} />
                         <Icon className={styles.viewIcon} Svg={EyeIcon} />
                     </div>
                 </div>
@@ -100,7 +100,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             className={styles.types}
                         />
                         <div className={styles.views}>
-                            <Text className={styles.viewCount} text={article.views.toString()} />
+                            <Text className={styles.viewCount} text={`${article.views}`} />
                             <Icon className={styles.viewIcon} Svg={EyeIcon} />
                         </div>
                     </div>
