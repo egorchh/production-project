@@ -20,7 +20,7 @@ import styles from './ArticleListItem.module.scss';
 interface ArticleListItemProps {
     className?: string;
     article: Article;
-    view?: ArticleListView
+    view: ArticleListView
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
@@ -28,7 +28,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
         className,
         article,
-        view = ArticleListView.PLATE,
+        view,
     } = props;
 
     const navigate = useNavigate();

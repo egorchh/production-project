@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page/Page';
 import styles from './Page404.module.scss';
 
 interface Page404Props {
@@ -10,7 +11,7 @@ export const Page404 = ({ className }: Page404Props) => {
     const { t } = useTranslation('404');
 
     return (
-        <div className={classNames(styles.page404, {}, [className])}>
+        <Page className={classNames(styles.page404, {}, [className])}>
             <div className={styles.container}>
                 <h1>
                     {t('Страница не найдена')}
@@ -19,6 +20,6 @@ export const Page404 = ({ className }: Page404Props) => {
                     {t('URL')}
                 </h3>
             </div>
-        </div>
+        </Page>
     );
 };

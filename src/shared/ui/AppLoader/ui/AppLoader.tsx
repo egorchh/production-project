@@ -7,10 +7,10 @@ interface AppLoaderProps {
 }
 
 export const AppLoader = memo(({ className }: AppLoaderProps) => (
-    <div className={classNames('lds-ellipsis', {}, [className])}>
+    <section className={classNames('lds-ellipsis', {}, [className])}>
         <div />
         <div />
         <div />
         <div />
-    </div>
+    </section>
 ));

@@ -43,7 +43,7 @@ export const Select = memo((props: SelectProps) => {
     };
 
     return (
-        <div className={classNames(styles.selectWrapper, {}, [className])}>
+        <section className={classNames(styles.selectWrapper, {}, [className])}>
             {label && (
                 <label className={styles.label} htmlFor="select">
                     {label}
@@ -57,6 +57,6 @@ export const Select = memo((props: SelectProps) => {
             >
                 {optionsList}
             </select>
-        </div>
+        </section>
     );
 });

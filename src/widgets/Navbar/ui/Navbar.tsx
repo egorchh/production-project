@@ -31,7 +31,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     };
 
     return (
-        <div className={classNames(styles.navbar, {}, [className])}>
+        <nav className={classNames(styles.navbar, {}, [className])}>
             {authData ? (
                 <AppButton
                     theme={AppButtonTheme.CLEAR}
@@ -52,6 +52,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <LangSwitcher className={styles.lang} />
             <ThemeSwitcher />
             <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
-        </div>
+        </nav>
     );
 });

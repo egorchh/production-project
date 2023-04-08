@@ -1,0 +1,7 @@
+.page {
+    flex-grow: 1;
+    padding: 30px 40px 80px;
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
+    flex-shrink: 100;
+}

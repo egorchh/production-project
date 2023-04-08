@@ -9,7 +9,7 @@ interface ArticleListProps {
     className?: string;
     isLoading: boolean;
     articles: Article[]
-    view?: ArticleListView
+    view: ArticleListView
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -17,22 +17,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className,
         articles,
         isLoading,
-        view = ArticleListView.LIST,
+        view,
     } = props;
-
-    if (isLoading) {
-        return (
-            <div className={classNames('', {}, [className, styles[view]])}>
-                {
-                    new Array(view === ArticleListView.LIST ? 3 : 9)
-                        .fill(0)
-                        .map((item, index) => (
-                            <ArticleSkeletonItem key={index} view={view} />
-                        ))
-                }
-            </div>
-        );
-    }
 
     const renderArticles = (article: Article) => (
         <ArticleListItem key={article.title} article={article} view={view} />
@@ -45,6 +31,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     ? articles.map(renderArticles)
                     : null
             }
+            {isLoading && (
+                <div className={classNames('', {}, [className, styles[view]])}>
+                    {
+                        new Array(view === ArticleListView.LIST ? 3 : 9)
+                            .fill(0)
+                            .map((item, index) => (
+                                <ArticleSkeletonItem key={index} view={view} />
+                            ))
+                    }
+                </div>
+            )}
         </div>
     );
 });

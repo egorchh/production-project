@@ -6,13 +6,13 @@ import styles from './ArticleListItem.module.scss';
 
 interface ArticleSkeletonItemProps {
     className?: string;
-    view?: ArticleListView
+    view: ArticleListView
 }
 
 export const ArticleSkeletonItem = memo((props: ArticleSkeletonItemProps) => {
     const {
         className,
-        view = ArticleListView.PLATE,
+        view,
     } = props;
 
     if (view === ArticleListView.LIST) {

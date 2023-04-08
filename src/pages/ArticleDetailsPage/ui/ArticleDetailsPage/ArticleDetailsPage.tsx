@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { CommentList } from 'entities/Comment';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
@@ -14,6 +14,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addComment';
 import { AppButton } from 'shared/ui';
+import { Page } from 'shared/ui/Page/Page';
 import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -66,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <AppButton onClick={onGoBackToArticles}>
                     {t('Назад')}
                 </AppButton>
@@ -81,7 +82,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                     comments={comments.reverse()}
                     isLoading={isLoading}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

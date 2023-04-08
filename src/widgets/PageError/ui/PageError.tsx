@@ -15,13 +15,13 @@ export const PageError = ({ className }: PageErrorProps) => {
     };
 
     return (
-        <div className={classNames(styles.pageError, {}, [className])}>
+        <section className={classNames(styles.pageError, {}, [className])}>
             <p>{t('Ошибка')}</p>
             <AppButton
                 onClick={reloadPage}
             >
                 {t('Обновить страницу')}
             </AppButton>
-        </div>
+        </section>
     );
 };
