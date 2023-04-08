@@ -5,14 +5,15 @@ import {
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'features/EditableProfileCard';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollRestorationSchema } from 'features/scrollRestoration/model';
 
 export interface StateSchema {
     user: UserSchema;
+    scroll: ScrollRestorationSchema;
 
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
@@ -24,6 +25,8 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;
@@ -38,7 +41,6 @@ export interface ReduxStoreWithManager extends EnhancedStore {
 
 export interface ThunkExtraArgs {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export type ThunkConfig<T> = {

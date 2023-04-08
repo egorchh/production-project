@@ -14,7 +14,7 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news 1",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -86,7 +86,7 @@
     },
     {
       "id": "2",
-      "title": "Python news",
+      "title": "Python news 1",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -110,7 +110,7 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Kotlin news 1",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -134,7 +134,7 @@
     },
     {
       "id": "4",
-      "title": "Python news",
+      "title": "Python news 2",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -158,7 +158,7 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
+      "title": "Kotlin news 2",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -182,7 +182,7 @@
     },
     {
       "id": "6",
-      "title": "Python news",
+      "title": "Python news 3",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -206,7 +206,7 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
+      "title": "Kotlin news 3",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -230,7 +230,7 @@
     },
     {
       "id": "8",
-      "title": "Python news",
+      "title": "Python news 4",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -254,7 +254,7 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
+      "title": "Kotlin news 4",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -278,7 +278,7 @@
     },
     {
       "id": "10",
-      "title": "Python news",
+      "title": "Python news 5",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -302,7 +302,7 @@
     },
     {
       "id": "11",
-      "title": "Kotlin news",
+      "title": "Kotlin news 5",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -326,7 +326,7 @@
     },
     {
       "id": "12",
-      "title": "Python news",
+      "title": "Python news 6",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -350,7 +350,7 @@
     },
     {
       "id": "13",
-      "title": "Kotlin news",
+      "title": "Kotlin news 6",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -374,7 +374,7 @@
     },
     {
       "id": "14",
-      "title": "Python news",
+      "title": "Python news 7",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -398,7 +398,7 @@
     },
     {
       "id": "15",
-      "title": "Kotlin news",
+      "title": "Kotlin news 7",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -422,7 +422,7 @@
     },
     {
       "id": "16",
-      "title": "Python news",
+      "title": "Python news 8",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
@@ -446,7 +446,7 @@
     },
     {
       "id": "17",
-      "title": "Kotlin news",
+      "title": "Kotlin news 8",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
