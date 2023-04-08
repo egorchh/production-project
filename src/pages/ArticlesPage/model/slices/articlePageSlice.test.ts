@@ -60,6 +60,7 @@ describe('articlesPageSlice.test', () => {
         expect(articlesPageReducer(state as ArticlesPageSchema, articlesPageActions.initState()))
             .toEqual({
                 ...state,
+                _inited: true,
                 limit: 4,
                 view: ArticleListView.LIST,
             });
