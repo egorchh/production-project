@@ -5,7 +5,7 @@ import ArticleDetailsPage from './ArticleDetailsPage';
 import { articleData } from './__fixtures__';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/Article/ArticleDetailsPage',
     component: ArticleDetailsPage,
     argTypes: {
         backgroundColor: { control: 'color' },

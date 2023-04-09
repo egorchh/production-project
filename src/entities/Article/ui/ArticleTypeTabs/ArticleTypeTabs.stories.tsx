@@ -1,22 +1,22 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ArticlesPage from './ArticlesPage';
+import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
-    title: 'pages/Article/ArticlesPage',
-    component: ArticlesPage,
+    title: 'shared/ArticleTypeTabs',
+    component: ArticleTypeTabs,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
     args: {},
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticleTypeTabs>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => (
     <div style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
     }}
     >
-        <ArticlesPage {...args} />
+        <ArticleTypeTabs {...args} />
     </div>
 );
 

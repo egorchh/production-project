@@ -87,16 +87,11 @@ describe('articlesPageSlice.test', () => {
     //             ids: ['1'],
     //             view: ArticleListView.LIST,
     //         },
-    //         user: {
-    //             authData: {
-    //                 id: '1',
-    //             },
-    //         },
     //     };
     //
     //     expect(articlesPageReducer(
     //         state as ArticlesPageSchema,
-    //         fetchArticlesList.fulfilled(data, '', { page: 1 }),
+    //         fetchArticlesList.fulfilled(data, '', {}),
     //     ))
     //         .toEqual({
     //             ...state,

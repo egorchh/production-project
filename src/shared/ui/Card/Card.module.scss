@@ -1,0 +1,14 @@
+.card {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.normal {
+    -webkit-box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
+}
+
+.outlined {
+    border: 2px solid var(--inverted-bg-color);
+}

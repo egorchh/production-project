@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
-import { ArticleList, ArticleListView } from 'entities/Article';
+import { ArticleList } from 'entities/Article';
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -8,7 +8,6 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
-import { ArticleViewSelector } from 'features/selectArticleView';
 import { Page } from 'widgets/Page/Page';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
@@ -20,10 +19,10 @@ import {
     getArticlesView,
 } from '../../model/selectors/articles';
 import {
-    articlesPageActions,
     articlesPageReducer,
     getArticles,
 } from '../../model/slices/articlePageSlice';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 
 interface ArticlesPageProps {
     className?: string;
@@ -40,10 +39,6 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     const error = useSelector(getArticlesError);
     const view = useSelector(getArticlesView);
 
-    const onChangeView = useCallback((view: ArticleListView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
-
     const onLoadNextPage = useCallback(() => {
         dispatch(fetchNextArticlePage());
     }, [dispatch]);
@@ -59,7 +54,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducer} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPage} className={classNames('', {}, [className])}>
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlePageFilters />
                 <ArticleList
                     view={view}
                     isLoading={isLoading}

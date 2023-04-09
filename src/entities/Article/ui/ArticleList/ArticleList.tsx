@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleSkeletonItem } from 'entities/Article/ui/ArticleListItem/ArticleSkeletonItem';
+import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article, ArticleListView } from '../../model/types/article';
 import styles from './ArticleList.module.scss';
@@ -23,6 +24,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const renderArticles = (article: Article) => (
         <ArticleListItem key={article.title} article={article} view={view} />
     );
+
+    if (!isLoading && !articles.length) {
+        // eslint-disable-next-line i18next/no-literal-string
+        return <Text align={TextAlign.LEFT} title="Статьи не найдены" />;
+    }
 
     return (
         <div className={classNames('', {}, [className, styles[view]])}>

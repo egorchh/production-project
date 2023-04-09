@@ -7,3 +7,5 @@ export {
     AppButton,
     AppButtonTheme,
 };
+
+// Все ui компоненты перенести в паблик апи

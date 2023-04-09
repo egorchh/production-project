@@ -1,22 +1,22 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ArticlesPage from './ArticlesPage';
+import { ArticleSortSelector } from './ArticleSortSelector';
 
 export default {
-    title: 'pages/Article/ArticlesPage',
-    component: ArticlesPage,
+    title: 'entities/Article/ArticleSortSelector',
+    component: ArticleSortSelector,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
     args: {},
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticleSortSelector>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+const Template: ComponentStory<typeof ArticleSortSelector> = (args) => (
     <div style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
     }}
     >
-        <ArticlesPage {...args} />
+        <ArticleSortSelector {...args} />
     </div>
 );
 

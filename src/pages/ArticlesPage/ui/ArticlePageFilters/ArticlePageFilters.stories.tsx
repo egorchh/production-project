@@ -1,22 +1,22 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ArticlesPage from './ArticlesPage';
+import { ArticlePageFilters } from './ArticlePageFilters';
 
 export default {
-    title: 'pages/Article/ArticlesPage',
-    component: ArticlesPage,
+    title: 'pages/Article/ArticlePageFilters',
+    component: ArticlePageFilters,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
     args: {},
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticlePageFilters>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+const Template: ComponentStory<typeof ArticlePageFilters> = (args) => (
     <div style={{
         display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
     }}
     >
-        <ArticlesPage {...args} />
+        <ArticlePageFilters {...args} />
     </div>
 );
 
