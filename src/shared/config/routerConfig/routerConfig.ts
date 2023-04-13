@@ -11,5 +11,7 @@ export enum AppRoutes {
     PROFILE = '/profile/', // + :id
     ARTICLES = 'articles',
     ARTICLE_DETAILS = '/articles/', // + :id
+    ARTICLE_CREATE = '/articles/new',
+    ARTICLE_EDIT = '/articles/:id/edit',
     PAGE404 = '*'
 }

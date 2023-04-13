@@ -13,11 +13,11 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addComment';
-import { AppButton } from 'shared/ui';
 import { Page } from 'widgets/Page/Page';
 import {
     articleDetailsPageReducer,
 } from 'pages/ArticleDetailsPage/model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -65,10 +65,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    const onGoBackToArticles = useCallback(() => {
-        window.history.back();
-    }, []);
-
     if (!id && __PROJECT__ !== 'storybook') {
         return (
             <div className={classNames(styles.articleDetails, {}, [className])}>
@@ -80,9 +76,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
-                <AppButton onClick={onGoBackToArticles}>
-                    {t('Назад')}
-                </AppButton>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id || '1'} />
                 <Text
                     className={styles.recommendationsTitle}

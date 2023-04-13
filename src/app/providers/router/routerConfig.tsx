@@ -8,6 +8,7 @@ import { Page404 } from 'pages/Page404';
 import { ProfilePage } from 'pages/ProfilePage';
 import { ArticlesPage } from 'pages/ArticlesPage';
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
+import { ArticleEditPage } from 'pages/ArticleEditPage';
 
 export const routerConfig: Array<AppRouterProps> = [
     {
@@ -31,6 +32,16 @@ export const routerConfig: Array<AppRouterProps> = [
     {
         path: `${AppRoutes.ARTICLE_DETAILS}:id`,
         element: <ArticleDetailsPage />,
+        authOnly: true,
+    },
+    {
+        path: `${AppRoutes.ARTICLE_EDIT}`,
+        element: <ArticleEditPage />,
+        authOnly: true,
+    },
+    {
+        path: `${AppRoutes.ARTICLE_CREATE}`,
+        element: <ArticleEditPage />,
         authOnly: true,
     },
     {
