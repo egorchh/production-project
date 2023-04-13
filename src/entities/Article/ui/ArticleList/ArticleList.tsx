@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleSkeletonItem } from 'entities/Article/ui/ArticleListItem/ArticleSkeletonItem';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
@@ -9,8 +9,9 @@ import styles from './ArticleList.module.scss';
 interface ArticleListProps {
     className?: string;
     isLoading: boolean;
-    articles: Article[]
-    view: ArticleListView
+    articles: Article[];
+    view: ArticleListView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -19,10 +20,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
         articles,
         isLoading,
         view,
+        target,
     } = props;
 
     const renderArticles = (article: Article) => (
-        <ArticleListItem key={article.title} article={article} view={view} />
+        <ArticleListItem target={target} key={article.title} article={article} view={view} />
     );
 
     if (!isLoading && !articles.length) {

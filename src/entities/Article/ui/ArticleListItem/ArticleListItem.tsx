@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Article, ArticleListView } from 'entities/Article';
@@ -6,7 +6,7 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-line.svg';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { AppButton, AppButtonTheme } from 'shared/ui';
+import { AppButton, AppButtonTheme, AppLink } from 'shared/ui';
 import {
     ArticleBlockText,
     ArticleBlockType,
@@ -14,13 +14,14 @@ import {
 import {
     ArticleTextBlockComponent,
 } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { useNavigate } from 'react-router-dom';
+import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
 import styles from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleListView
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
@@ -29,13 +30,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         className,
         article,
         view,
+        target,
     } = props;
-
-    const navigate = useNavigate();
-
-    const onOpenArticle = useCallback(() => {
-        navigate(article.id);
-    }, [article.id, navigate]);
 
     if (view === ArticleListView.LIST) {
         const textBlock = article
@@ -48,10 +44,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             >
                 <div className={styles.topSide}>
                     <div className={styles.header}>
-                        <div className={styles.userInfo}>
-                            <Avatar size={30} src={article.user.avatar} />
-                            <Text text={article.user.username} />
-                        </div>
+                        {article.user
+                            && (
+                                <div className={styles.userInfo}>
+                                    <Avatar size={30} src={article.user.avatar} />
+                                    <Text text={article.user.username} />
+                                </div>
+                            )}
                         <Text text={article.createdAt} />
                     </div>
                     <Text title={article.title} align={TextAlign.LEFT} />
@@ -67,9 +66,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     )}
                 </div>
                 <div className={styles.footer}>
-                    <AppButton onClick={onOpenArticle} theme={AppButtonTheme.OUTLINE}>
-                        {t('Читать далее')}
-                    </AppButton>
+                    <AppLink replace target={target} to={AppRoutes.ARTICLE_DETAILS + article.id}>
+                        <AppButton theme={AppButtonTheme.OUTLINE}>
+                            {t('Читать далее')}
+                        </AppButton>
+                    </AppLink>
                     <div className={styles.views}>
                         <Text className={styles.viewCount} text={`${article.views}`} />
                         <Icon className={styles.viewIcon} Svg={EyeIcon} />
@@ -80,8 +81,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <div className={classNames(styles.PLATE, {}, [className, styles[view]])}>
-            <div className={styles.articlesWrapperPlate} onClick={onOpenArticle}>
+        <AppLink
+            target={target}
+            replace
+            className={classNames(styles.PLATE, {}, [className, styles[view]])}
+            to={AppRoutes.ARTICLE_DETAILS + article.id}
+        >
+            <div className={styles.articlesWrapperPlate}>
                 <img
                     src={article.img}
                     alt={article.title}
@@ -107,6 +113,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <Text title={`${article.title.slice(0, 13)}...`} align={TextAlign.LEFT} />
                 </div>
             </div>
-        </div>
+        </AppLink>
     );
 });

@@ -1,4 +1,6 @@
-export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
+export {
+    ArticleDetailsPageSchema,
+} from './model/types';
 
 export {
     ArticleDetailsPageLazy as ArticleDetailsPage,
@@ -7,4 +9,4 @@ export {
 export {
     getArticleDetailsCommentsIsLoading,
     getArticleDetailsCommentsError,
-} from './model/selectors/comments';
+} from './model/selectors/comments/comments';

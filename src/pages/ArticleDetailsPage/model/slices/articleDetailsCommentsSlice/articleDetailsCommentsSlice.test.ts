@@ -1,7 +1,7 @@
 import {
     fetchCommentsByArticleId,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 
 const data = [
@@ -17,13 +17,13 @@ const data = [
 
 describe('articleDetailsCommentsSlice.test', () => {
     test('successfully fetched comments', () => {
-        const state: DeepPartial<ArticleDetailsCommentsSchema> = {
+        const state: DeepPartial<ArticleDetailsPageSchema['comments']> = {
             isLoading: false,
             error: undefined,
         };
 
         expect(articleDetailsCommentsReducer(
-            state as ArticleDetailsCommentsSchema,
+            state as ArticleDetailsPageSchema['comments'],
             fetchCommentsByArticleId.fulfilled(data, '', ''),
         ))
             .toEqual({
@@ -36,13 +36,13 @@ describe('articleDetailsCommentsSlice.test', () => {
     });
 
     test('pending fetched comments', () => {
-        const state: DeepPartial<ArticleDetailsCommentsSchema> = {
+        const state: DeepPartial<ArticleDetailsPageSchema['comments']> = {
             isLoading: false,
             error: undefined,
         };
 
         expect(articleDetailsCommentsReducer(
-            state as ArticleDetailsCommentsSchema,
+            state as ArticleDetailsPageSchema['comments'],
             fetchCommentsByArticleId.pending,
         ))
             .toEqual({

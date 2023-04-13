@@ -7,14 +7,14 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import {
     fetchCommentsByArticleId,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+import { ArticleDetailsCommentsSchema } from '../../types/ArticleDetailsCommentsSchema';
 
 const commentAdapter = createEntityAdapter<Comment>({
     selectId: (comment) => comment.id,
 });
 
 export const getArticleComments = commentAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsComments || commentAdapter.getInitialState(),
+    (state) => state.articleDetailsPage?.comments || commentAdapter.getInitialState(),
 );
 
 const articleDetailsCommentsSlice = createSlice({

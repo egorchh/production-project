@@ -2,11 +2,13 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { getArticleDetailsCommentsError, getArticleDetailsCommentsIsLoading } from './comments';
 
 const initialState: DeepPartial<StateSchema> = {
-    articleDetailsComments: {
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {},
+    articleDetailsPage: {
+        comments: {
+            isLoading: false,
+            error: undefined,
+            ids: [],
+            entities: {},
+        },
     },
 };
 
