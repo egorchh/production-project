@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleSkeletonItem } from 'entities/Article/ui/ArticleListItem/ArticleSkeletonItem';
 import { Text, TextAlign } from 'shared/ui/Text/Text';
+import { ArticleSkeletonItem } from '../ArticleListItem/ArticleSkeletonItem';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article, ArticleListView } from '../../model/types/article';
 import styles from './ArticleList.module.scss';

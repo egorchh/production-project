@@ -2,8 +2,8 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback, MutableRefObject,
 } from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 import CloseButton from '../../assets/icons/close-button.svg';
 

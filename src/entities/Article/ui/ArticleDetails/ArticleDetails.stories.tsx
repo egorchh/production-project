@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { articleData } from 'entities/Article/ui/ArticleDetails/__fixtures__';
+import { articleData } from '../ArticleDetails/__fixtures__';
 import { ArticleDetails } from './ArticleDetails';
 
 export default {

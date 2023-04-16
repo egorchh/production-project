@@ -1,5 +1,5 @@
 import { ArticleListView, ArticleType } from 'entities/Article/model/types/article';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { articlesPageActions, articlesPageReducer } from './articlePageSlice';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 

@@ -29,6 +29,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'feature-sliced-design-validator',
     ],
     rules: {
         'react/jsx-indent': ['error', 4],
@@ -64,6 +65,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'react/no-array-index-key': 'off',
+        'feature-sliced-design-validator/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

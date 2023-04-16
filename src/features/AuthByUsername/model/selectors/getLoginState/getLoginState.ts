@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { LoginSchema } from 'features/AuthByUsername';
+import { LoginSchema } from '../../types/loginSchema';
 
 const initialState: LoginSchema = {
     username: '',

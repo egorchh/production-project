@@ -1,4 +1,4 @@
-import { AddCommentSchema } from 'features/addComment';
+import { AddCommentSchema } from '../types/addComment';
 import { addCommentReducer, addCommentActions } from './addCommentSlice';
 
 describe('addCommentSlice.test', () => {

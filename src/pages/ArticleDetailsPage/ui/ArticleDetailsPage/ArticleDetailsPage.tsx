@@ -16,7 +16,7 @@ import { AddCommentForm } from 'features/addComment';
 import { Page } from 'widgets/Page/Page';
 import {
     articleDetailsPageReducer,
-} from 'pages/ArticleDetailsPage/model/slices';
+} from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
     fetchArticleRecommendations,

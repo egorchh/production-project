@@ -4,13 +4,13 @@ import {
     getArticlesIsLoading,
     getArticlesPageHasMore,
     getArticlesPageNumber,
-} from 'pages/ArticlesPage/model/selectors/articles';
+} from '../../selectors/articles';
 import {
     articlesPageActions,
-} from 'pages/ArticlesPage/model/slices/articlePageSlice';
+} from '../../slices/articlePageSlice';
 import {
     fetchArticlesList,
-} from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+} from '../../services/fetchArticlesList/fetchArticlesList';
 
 export const fetchNextArticlePage = createAsyncThunk<
     void,

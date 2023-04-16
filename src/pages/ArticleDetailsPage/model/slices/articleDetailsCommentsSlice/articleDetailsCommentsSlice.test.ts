@@ -1,7 +1,7 @@
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
+} from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsPageSchema } from '../../types';
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 
 const data = [

@@ -1,8 +1,8 @@
-import { Article } from 'entities/Article';
 import {
     ArticleBlockType,
     ArticleType,
-} from 'entities/Article/model/types/article';
+    Article,
+} from '../../../model/types/article';
 
 export const articleData: Article = {
     id: '1',

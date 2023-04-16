@@ -6,11 +6,10 @@ import ArrowLeft from 'shared/assets/icons/arrow-left.svg';
 import EditIcon from 'shared/assets/icons/edit-article.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
 import { getArticleDetailsData } from 'entities/Article';
-import { getCanUserEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
 import { useNavigate } from 'react-router';
 import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
+import { getCanUserEditArticle } from '../../model/selectors/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
