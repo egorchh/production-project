@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Select } from '../Select/Select';
 import { Card, CardTheme } from './Card';
+import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Card',
@@ -13,12 +14,9 @@ export default {
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <Card {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Normal = Template.bind({});

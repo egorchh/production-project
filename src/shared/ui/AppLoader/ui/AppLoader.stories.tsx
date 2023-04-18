@@ -4,6 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { AppLoader } from './AppLoader';
+import { StoryContainer } from '../../../config/storybook/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Loader',
@@ -13,7 +14,11 @@ export default {
     },
 } as ComponentMeta<typeof AppLoader>;
 
-const Template: ComponentStory<typeof AppLoader> = (args) => <AppLoader {...args} />;
+const Template: ComponentStory<typeof AppLoader> = (args) => (
+    <StoryContainer>
+        <AppLoader {...args} />
+    </StoryContainer>
+);
 
 export const Dark = Template.bind({});
 Dark.args = {};

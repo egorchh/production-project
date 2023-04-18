@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Code } from './Code';
+import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Code',
@@ -12,12 +13,9 @@ export default {
 } as ComponentMeta<typeof Code>;
 
 const Template: ComponentStory<typeof Code> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <Code {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});

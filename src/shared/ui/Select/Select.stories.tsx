@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Select } from './Select';
+import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Select',
@@ -11,12 +12,9 @@ export default {
 } as ComponentMeta<typeof Select>;
 
 const Template: ComponentStory<typeof Select> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', width: '300px',
-    }}
-    >
+    <StoryContainer>
         <Select {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});

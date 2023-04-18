@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
 import { Tabs } from './Tabs';
 
 export default {
@@ -13,12 +14,9 @@ export default {
 } as ComponentMeta<typeof Tabs>;
 
 const Template: ComponentStory<typeof Tabs> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <Tabs {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});

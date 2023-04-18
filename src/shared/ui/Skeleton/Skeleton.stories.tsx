@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
 import { Skeleton } from './Skeleton';
 
 export default {
@@ -14,12 +15,9 @@ export default {
 } as ComponentMeta<typeof Skeleton>;
 
 const Template: ComponentStory<typeof Skeleton> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <Skeleton {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});

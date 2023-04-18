@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { Modal } from './Modal';
+import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Modal',
@@ -16,12 +17,9 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <Modal {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});

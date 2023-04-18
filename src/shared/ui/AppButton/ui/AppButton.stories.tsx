@@ -4,6 +4,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { AppButton, AppButtonSize, AppButtonTheme } from './AppButton';
+import { StoryContainer } from '../../../config/storybook/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/AppButton',
@@ -17,12 +18,9 @@ export default {
 } as ComponentMeta<typeof AppButton>;
 
 const Template: ComponentStory<typeof AppButton> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <AppButton {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});
