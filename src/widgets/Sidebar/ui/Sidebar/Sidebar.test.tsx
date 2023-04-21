@@ -11,7 +11,7 @@ describe('Sidebar', () => {
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
-    test('render AppButton with text', () => {
+    test('click button and collapse Sidebar', () => {
         componentRender(<Sidebar />);
         const button = screen.getByTestId('sidebar-toggle');
 

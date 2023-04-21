@@ -5,6 +5,7 @@ import {
 } from 'shared/ui';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { useSelector } from 'react-redux';
+import { VStack } from 'shared/ui/Stack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
@@ -33,30 +34,26 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     );
 
     return (
-        <aside
+        <div
             data-testid="sidebar"
             className={
-                classNames(
-                    styles.sidebar,
-                    { [styles.collapsed]: collapsed },
-                    [className],
-                )
+                classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])
             }
         >
-            <ul className={styles.links}>
+            <VStack>
                 {listLinks}
-            </ul>
-            <AppButton
-                data-testid="sidebar-toggle"
-                type="button"
-                className={styles.button}
-                square
-                size={AppButtonSize.M}
-                theme={AppButtonTheme.BACKGROUND_INVERTED}
-                onClick={onToggleSidebar}
-            >
-                {collapsed ? '>' : '<'}
-            </AppButton>
-        </aside>
+                <AppButton
+                    data-testid="sidebar-toggle"
+                    type="button"
+                    className={styles.button}
+                    square
+                    size={AppButtonSize.M}
+                    theme={AppButtonTheme.BACKGROUND_INVERTED}
+                    onClick={onToggleSidebar}
+                >
+                    {collapsed ? '>' : '<'}
+                </AppButton>
+            </VStack>
+        </div>
     );
 });

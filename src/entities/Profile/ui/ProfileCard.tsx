@@ -10,6 +10,7 @@ import { Currency } from 'entities/Currency/model/types/currency';
 import { CurrencySelect } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
+import { VStack } from 'shared/ui/Stack';
 import styles from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -69,9 +70,9 @@ export const ProfileCard = ({
     }
 
     return (
-        <div className={classNames(styles.profileCard, {}, [className])}>
-            <div className={styles.content}>
-                <div className={styles.userInfo}>
+        <VStack>
+            <VStack gap="16" align="start" className={styles.content}>
+                <VStack fullWidth align="center">
                     {
                         data?.avatar
                         && (<Avatar size={70} src={data.avatar} />)
@@ -80,7 +81,7 @@ export const ProfileCard = ({
                         data?.username
                         && (<Text className={styles.username} title={data.username} />)
                     }
-                </div>
+                </VStack>
                 <Input
                     readonly={readonly}
                     className={styles.input}
@@ -135,7 +136,7 @@ export const ProfileCard = ({
                     onChange={onChangeCurrency}
                     readonly={readonly}
                 />
-            </div>
-        </div>
+            </VStack>
+        </VStack>
     );
 };
