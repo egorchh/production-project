@@ -8,7 +8,7 @@ import styles from './ArticleList.module.scss';
 
 interface ArticleListProps {
     className?: string;
-    isLoading: boolean;
+    isLoading?: boolean;
     articles: Article[];
     view: ArticleListView;
     target?: HTMLAttributeAnchorTarget;

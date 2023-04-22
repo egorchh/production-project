@@ -1,26 +1,9 @@
 export {
-    Profile,
-    ProfileSchema,
-    ValidateProfileError,
-} from '../../features/EditableProfileCard/model/types/profile';
-
+    EditableProfileCard,
+} from './ui/EditableProfileCard/EditableProfileCard';
 export {
     profileReducer,
-    profileActions,
-} from '../../features/EditableProfileCard/model/slice/profileSlice';
-
+} from './model/slice/profileSlice';
 export {
-    fetchProfileData,
-} from '../../features/EditableProfileCard/model/services/fetchProfileData/fetchProfileData';
-
-export {
-    updateProfileData,
-} from '../../features/EditableProfileCard/model/services/updateProfileData/updateProfileData';
-
-export {
-    getProfileLoading,
-    getProfileData,
-    getProfileError,
-    getProfileReadonly,
-    getProfileEditedData,
-} from './model/selectors';
+    ProfileSchema,
+} from './model/types/profile';

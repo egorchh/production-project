@@ -3,14 +3,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/ui/Input';
 import { AppLoader } from 'shared/ui/AppLoader/ui/AppLoader';
-import { getProfileReadonly, Profile } from 'features/EditableProfileCard';
-import { useSelector } from 'react-redux';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency } from 'entities/Currency/model/types/currency';
 import { CurrencySelect } from 'entities/Currency';
 import { Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country';
 import { VStack } from 'shared/ui/Stack';
+import { Profile } from '../model/types/profile';
 import styles from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -18,6 +17,7 @@ interface ProfileCardProps {
     data?: Profile;
     loading?: boolean;
     error?: string;
+    readonly?: boolean;
     onChangeFirstname?: (value?: string) => void;
     onChangeLastname?: (value?: string) => void;
     onChangeAge?: (value?: string) => void;
@@ -33,6 +33,7 @@ export const ProfileCard = ({
     data,
     loading,
     error,
+    readonly,
     onChangeFirstname,
     onChangeLastname,
     onChangeAge,
@@ -43,7 +44,6 @@ export const ProfileCard = ({
     onChangeCountry,
 }: ProfileCardProps) => {
     const { t } = useTranslation('profile');
-    const readonly = useSelector(getProfileReadonly);
 
     if (loading) {
         return (
