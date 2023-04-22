@@ -24,7 +24,8 @@
     "analyze:dev": "analyze=1 webpack --env mode=development",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "author": "Egor Podolskij",
   "license": "ISC",
