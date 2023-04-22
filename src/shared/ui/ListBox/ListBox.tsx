@@ -1,9 +1,10 @@
 import { Fragment, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton } from 'shared/ui';
-import { Text } from 'shared/ui/Text/Text';
-import { VStack } from 'shared/ui/Stack';
+import { DropdownDirection } from '../../types/ui';
+import { AppButton } from '../AppButton/ui/AppButton';
+import { Text } from '../Text/Text';
+import { VStack } from '../Stack/VStack/VStack';
 import styles from './ListBox.module.scss';
 
 type ListBoxOption = {
@@ -11,8 +12,6 @@ type ListBoxOption = {
     content?: ReactNode;
     unavailable?: boolean,
 }
-
-type DropdownDirection = 'top' | 'bottom' | 'right' | 'left';
 
 type ListBoxProps = {
     className?: string;

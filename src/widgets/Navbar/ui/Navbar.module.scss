@@ -1,8 +1,4 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
     height: var(--navbar-height);
     padding: 20px 40px;
     background: var(--inverted-bg-color);
@@ -13,8 +9,8 @@
     font-weight: bold;
 }
 
-.singIn {
+.singIn,
+.dropdown {
     font-weight: bold;
     color: var(--inverted-secondary-color);
-    margin-right: 20px;
 }

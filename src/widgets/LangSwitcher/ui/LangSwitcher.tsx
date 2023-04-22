@@ -3,13 +3,16 @@ import { AppButton, AppButtonTheme } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { memo } from 'react';
+import { Icon } from 'shared/ui/Icon/Icon';
+import Language from 'shared/assets/icons/language.svg';
+import styles from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
     className?: string;
 }
 
 export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
 
     const toggleLanguage = async () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -22,7 +25,7 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
             size={AppButtonSize.M}
             onClick={toggleLanguage}
         >
-            {t('Язык')}
+            <Icon Svg={Language} className={styles.icon} />
         </AppButton>
     );
 });

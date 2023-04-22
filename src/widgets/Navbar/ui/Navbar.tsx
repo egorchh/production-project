@@ -1,11 +1,13 @@
 import React, { memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { LangSwitcher, ThemeSwitcher } from 'widgets';
 import { useTranslation } from 'react-i18next';
-import { AppButton, AppButtonTheme } from 'shared/ui';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { MenuDropdown, MenuDropdownItem } from 'shared/ui/Menu/MenuDropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { HStack } from 'shared/ui/Stack';
+import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
 import styles from './Navbar.module.scss';
 
 export interface NavbarProps {
@@ -30,28 +32,34 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     };
 
+    const dropdownItems: MenuDropdownItem[] = [
+        {
+            content: authData ? t('Выйти') : t('Войти'),
+            onClick: authData ? onLogout : onShowAuthModal,
+        },
+    ];
+
+    if (authData) {
+        dropdownItems.unshift({
+            content: t('Профиль'),
+            href: AppRoutes.PROFILE + authData.id,
+        });
+    }
+
     return (
-        <nav className={classNames(styles.navbar, {}, [className])}>
-            {authData ? (
-                <AppButton
-                    theme={AppButtonTheme.CLEAR}
-                    onClick={onLogout}
-                    className={styles.singIn}
-                >
-                    {t('Выйти')}
-                </AppButton>
-            ) : (
-                <AppButton
-                    theme={AppButtonTheme.CLEAR}
-                    onClick={onShowAuthModal}
-                    className={styles.singIn}
-                >
-                    {t('Войти')}
-                </AppButton>
-            )}
-            <LangSwitcher className={styles.lang} />
-            <ThemeSwitcher />
+        <HStack
+            className={classNames(styles.navbar, {}, [className])}
+            justify="end"
+            align="center"
+            fullWidth
+        >
+            <MenuDropdown
+                className={styles.dropdown}
+                items={dropdownItems}
+                dropdownDirection="left"
+                trigger={<Avatar src={authData?.avatar} size={35} />}
+            />
             <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
-        </nav>
+        </HStack>
     );
 });

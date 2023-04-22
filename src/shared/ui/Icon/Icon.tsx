@@ -5,12 +5,27 @@ import styles from './Icon.module.scss';
 interface IconProps {
     className?: string;
     Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+    width?: number;
+    height?: number;
+    invertedColor?: boolean;
 }
 
 export const Icon = memo((props: IconProps) => {
-    const { className, Svg } = props;
+    const {
+        className,
+        Svg,
+        width = 24,
+        height = 24,
+        invertedColor,
+    } = props;
 
     return (
-        <Svg className={classNames(styles.icon, {}, [className])} />
+        <Svg
+            width={width}
+            height={height}
+            className={
+                classNames(styles.icon, { [styles.invertedColorStyle]: invertedColor }, [className])
+            }
+        />
     );
 });

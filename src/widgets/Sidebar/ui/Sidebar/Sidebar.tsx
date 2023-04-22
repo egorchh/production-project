@@ -6,6 +6,7 @@ import {
 import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
 import { useSelector } from 'react-redux';
 import { VStack } from 'shared/ui/Stack';
+import { LangSwitcher, ThemeSwitcher } from 'widgets';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
@@ -40,8 +41,14 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])
             }
         >
-            <VStack>
-                {listLinks}
+            <VStack justify="between" fullWidth>
+                <VStack>
+                    {listLinks}
+                </VStack>
+                <VStack spaceBottom="16" gap="8">
+                    <LangSwitcher />
+                    <ThemeSwitcher />
+                </VStack>
                 <AppButton
                     data-testid="sidebar-toggle"
                     type="button"
