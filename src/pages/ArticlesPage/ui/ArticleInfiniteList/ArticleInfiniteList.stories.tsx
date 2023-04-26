@@ -4,7 +4,7 @@ import { StoryContainer } from 'shared/config/storybook/StoryContainer/StoryCont
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 export default {
-    title: 'shared/ArticleInfiniteList',
+    title: 'pages/ArticleInfiniteList',
     component: ArticleInfiniteList,
     argTypes: {
         backgroundColor: { control: 'color' },

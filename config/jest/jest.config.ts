@@ -60,6 +60,16 @@ export default {
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
 
+    // Генерация jest-html репорта для тестов
+    reporters: [
+        'default',
+        ['jest-html-reporters', {
+            publicPath: '<rootDir>/reports/unit',
+            filename: 'report.html',
+            openReport: true,
+        }],
+    ],
+
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [
     //     '/node_modules/',
