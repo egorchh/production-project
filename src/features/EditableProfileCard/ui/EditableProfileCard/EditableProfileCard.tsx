@@ -105,7 +105,12 @@ export const EditableProfileCard = memo(({ id }: { id: string }) => {
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <EditableProfileCardHeader />
             {validateErrors?.length && validateErrors.map((error) => (
-                <Text key={error} theme={TextTheme.ERROR} text={validateErrorsMapping[error]} />
+                <Text
+                    key={error}
+                    theme={TextTheme.ERROR}
+                    text={validateErrorsMapping[error]}
+                    dataTestId="EditableProfileCard.ErrorText"
+                />
             ))}
             <ProfileCard
                 data={editedData}

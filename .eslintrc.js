@@ -62,6 +62,7 @@ module.exports = {
                 'gap',
                 'as',
                 'dropdownDirection',
+                'dataTestId',
             ],
         }],
         'max-len': ['error', {

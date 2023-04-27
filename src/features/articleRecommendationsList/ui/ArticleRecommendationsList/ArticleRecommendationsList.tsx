@@ -15,7 +15,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { data: articles, isLoading, error } = useArticleRecommendationsList(3);
     const { t } = useTranslation();
 
-    if (error) {
+    if (error || !articles) {
         return (
             <Text text={t('Призошла ошибка при загрузке рекомендаций')} />
         );

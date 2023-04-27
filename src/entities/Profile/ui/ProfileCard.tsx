@@ -88,6 +88,7 @@ export const ProfileCard = ({
                     value={data?.username}
                     placeholder={t('Username')}
                     onChange={onChangeUsername}
+                    data-testid="ProfileCard.Username"
                 />
                 <Input
                     readonly={readonly}
