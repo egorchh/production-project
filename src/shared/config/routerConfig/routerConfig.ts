@@ -1,7 +1,9 @@
 import { RouteProps } from 'react-router-dom';
+import { UserRole } from 'entities/User';
 
 export type AppRouterProps = RouteProps & {
     authOnly?: boolean;
+    roles?: UserRole[]
 }
 
 export enum AppRoutes {
@@ -13,5 +15,7 @@ export enum AppRoutes {
     ARTICLE_DETAILS = '/articles/', // + :id
     ARTICLE_CREATE = '/articles/new',
     ARTICLE_EDIT = '/articles/:id/edit',
-    PAGE404 = '*'
+    ADMIN_PANEL = '/admin',
+    PAGE404 = '*',
+    FORBIDDEN = '/forbidden'
 }

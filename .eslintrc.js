@@ -67,7 +67,7 @@ module.exports = {
         }],
         'max-len': ['error', {
             ignoreComments: true,
-            code: 100,
+            code: 150,
         }],
         'no-undef': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',

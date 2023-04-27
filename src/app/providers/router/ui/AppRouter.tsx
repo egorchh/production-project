@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { routerConfig } from 'app/providers/router/routerConfig';
 import { PageLoader } from 'widgets/PageLoader';
 import { AppRouterProps } from 'shared/config/routerConfig/routerConfig';
+import { RequireRoles } from 'app/providers/router/ui/RequireRoles';
 import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
 
 function AppRouter() {
@@ -20,7 +21,13 @@ function AppRouter() {
                 key={route.path}
                 path={route.path}
                 element={
-                    route.authOnly ? <RequireAuth>{element}</RequireAuth> : element
+                    route.authOnly ? (
+                        <RequireAuth>
+                            <RequireRoles roles={route.roles}>
+                                {element}
+                            </RequireRoles>
+                        </RequireAuth>
+                    ) : element
                 }
             />
         );
