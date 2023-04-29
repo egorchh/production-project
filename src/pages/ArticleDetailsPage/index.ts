@@ -1,4 +1,4 @@
-export {
+export type {
     ArticleDetailsPageSchema,
 } from './model/types';
 

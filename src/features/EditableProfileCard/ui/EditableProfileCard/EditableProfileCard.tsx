@@ -11,6 +11,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { ValidateProfileError } from '../../model/consts/consts';
 import {
     getProfileEditedData,
     getProfileError,
@@ -19,7 +20,6 @@ import {
     getProfileValidateErrors,
 } from '../../model/selectors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { ValidateProfileError } from '../../model/types/profile';
 import {
     profileActions,
     profileReducer,

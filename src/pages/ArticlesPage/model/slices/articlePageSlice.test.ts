@@ -1,4 +1,4 @@
-import { ArticleListView, ArticleType } from 'entities/Article/model/types/article';
+import { ArticleListView, ArticleType } from 'entities/Article/model/consts/consts';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { articlesPageActions, articlesPageReducer } from './articlePageSlice';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';

@@ -1,11 +1,14 @@
 export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
 export { getUserMounted } from './model/selectors/getUserMounted/getUserMounted';
 
-export {
+export type {
     UserSchema,
     User,
-    UserRole,
 } from './model/types/userSchema';
+
+export {
+    UserRole,
+} from './model/consts/consts';
 
 export {
     isUserManager,

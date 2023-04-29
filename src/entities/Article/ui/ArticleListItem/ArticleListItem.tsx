@@ -7,10 +7,10 @@ import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { AppButton, AppButtonTheme, AppLink } from 'shared/ui';
 import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
+import { ArticleBlockType, ArticleListView } from '../../model/consts/consts';
 import {
     ArticleBlockText,
-    ArticleBlockType,
-    Article, ArticleListView,
+    Article,
 } from '../../model/types/article';
 import {
     ArticleTextBlockComponent,

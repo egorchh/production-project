@@ -1,16 +1,5 @@
 import { User } from 'entities/User';
-
-export enum ArticleSortField {
-    VIEWS = 'views',
-    TITLE = 'title',
-    CREATED = 'createdAt'
-}
-
-export enum ArticleBlockType {
-    TEXT = 'TEXT',
-    CODE = 'CODE',
-    IMAGE = 'IMAGE',
-}
+import { ArticleBlockType, ArticleType } from '../consts/consts';
 
 export interface ArticleBlockBase {
     id: string;
@@ -36,14 +25,6 @@ export interface ArticleBlockImage extends ArticleBlockBase {
 
 export type ArticleBlock = ArticleBlockCode | ArticleBlockText | ArticleBlockImage
 
-export enum ArticleType {
-    ALL = 'ALL',
-    IT = 'IT',
-    SCIENCE = 'SCIENCE',
-    ECONOMICS = 'ECONOMICS',
-    ECOLOGY = 'ECOLOGY',
-}
-
 export interface Article {
     id: string;
     user: User;
@@ -54,9 +35,4 @@ export interface Article {
     createdAt: string;
     type: ArticleType[],
     blocks: ArticleBlock[]
-}
-
-export enum ArticleListView {
-    LIST = 'LIST',
-    PLATE = 'PLATE'
 }

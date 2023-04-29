@@ -4,6 +4,6 @@ export {
 export {
     profileReducer,
 } from './model/slice/profileSlice';
-export {
+export type {
     ProfileSchema,
 } from './model/types/profile';

@@ -1,6 +1,5 @@
+import { ArticleBlockType, ArticleType } from '../../../model/consts/consts';
 import {
-    ArticleBlockType,
-    ArticleType,
     Article,
 } from '../../../model/types/article';
 
