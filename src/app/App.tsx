@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import { AppRouter } from 'app/providers/router';
-import { Navbar, Sidebar } from 'widgets';
+import { Navbar } from 'widgets';
+import { Sidebar } from 'widgets/Sidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserMounted, userActions } from 'entities/User';
 
