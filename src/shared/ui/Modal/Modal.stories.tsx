@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
 import { Modal } from './Modal';
-import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
+import { StoryContainer } from '../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Modal',

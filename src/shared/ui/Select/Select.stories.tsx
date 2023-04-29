@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Select } from './Select';
-import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
+import { StoryContainer } from '../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Select',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from './Avatar';
-import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
+import { StoryContainer } from '../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Avatar',

@@ -32,7 +32,7 @@ const initialReducers: ReducersList = {
     profile: profileReducer,
 };
 
-export const EditableProfileCard = memo(({ id }: { id: string }) => {
+export const EditableProfileCard = memo(({ id }: { id?: string }) => {
     const dispatch = useAppDispatch();
     const editedData = useSelector(getProfileEditedData);
     const loading = useSelector(getProfileLoading);

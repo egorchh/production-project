@@ -1,5 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoryContainer } from 'shared/config/storybook/ui/StoryContainer/StoryContainer';
 import { ArticlePageFilters } from './ArticlePageFilters';
 
 export default {
@@ -12,13 +14,11 @@ export default {
 } as ComponentMeta<typeof ArticlePageFilters>;
 
 const Template: ComponentStory<typeof ArticlePageFilters> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <ArticlePageFilters {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [StoreDecorator({})];

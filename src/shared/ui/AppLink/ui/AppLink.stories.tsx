@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { AppLink, AppLinkTheme } from './AppLink';
-import { StoryContainer } from '../../../config/storybook/StoryContainer/StoryContainer';
+import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/AppLink',

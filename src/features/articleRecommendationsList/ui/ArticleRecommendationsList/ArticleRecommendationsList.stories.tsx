@@ -4,7 +4,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { StoryContainer } from 'shared/config/storybook/ui/StoryContainer/StoryContainer';
 import { Article } from 'entities/Article';
 import withMock from 'storybook-addon-mock';
-import ArticlesPage from './ArticlesPage';
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const article: Article = {
     id: '1',
@@ -19,8 +19,8 @@ const article: Article = {
 };
 
 export default {
-    title: 'pages/Article/ArticlesPage',
-    component: ArticlesPage,
+    title: 'features/ArticleRecommendationsList',
+    component: ArticleRecommendationsList,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
@@ -28,7 +28,7 @@ export default {
     parameters: {
         mockData: [
             {
-                url: `${__API__}/articles?_expand=user&_limit=3&_page=2&_order=asc&_sort=&q=`,
+                url: `${__API__}/articles?_limit=3`,
                 method: 'GET',
                 status: 200,
                 response: [
@@ -41,11 +41,11 @@ export default {
         ],
     },
     args: {},
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticleRecommendationsList>;
 
-const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
     <StoryContainer>
-        <ArticlesPage {...args} />
+        <ArticleRecommendationsList {...args} />
     </StoryContainer>
 );
 

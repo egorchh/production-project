@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoryContainer } from 'shared/config/storybook/ui/StoryContainer/StoryContainer';
 import AddCommentForm from './AddCommentForm';
 
 export default {
@@ -14,12 +15,9 @@ export default {
 } as ComponentMeta<typeof AddCommentForm>;
 
 const Template: ComponentStory<typeof AddCommentForm> = (args) => (
-    <div style={{
-        display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh',
-    }}
-    >
+    <StoryContainer>
         <AddCommentForm {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const Primary = Template.bind({});

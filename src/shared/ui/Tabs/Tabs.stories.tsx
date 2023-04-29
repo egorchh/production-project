@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
+import { StoryContainer } from '../../config/storybook/ui/StoryContainer/StoryContainer';
 import { Tabs } from './Tabs';
 
 export default {

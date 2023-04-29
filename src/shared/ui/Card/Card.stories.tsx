@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Select } from '../Select/Select';
 import { Card, CardTheme } from './Card';
-import { StoryContainer } from '../../config/storybook/StoryContainer/StoryContainer';
+import { StoryContainer } from '../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Card',
