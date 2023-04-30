@@ -1,20 +1,12 @@
-.menu {
-    position: relative;
-}
-
-.button,
-.buttonWrapper {
-    background: none;
-    border: none;
+.listbox {
     width: 100%;
 }
 
-.items {
+.options {
     display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 10;
-    min-width: 200px;
     width: 100%;
     background: var(--white);
     border-radius: 5px;
@@ -33,29 +25,9 @@
     justify-content: center;
     width: 100%;
     min-height: 50px;
-    background: none;
-    border: none;
-    text-transform: none;
 }
 
-.active {
-    background-color: var(--inverted-secondary-color);
-}
-
-.dropdownTop {
-    bottom: 100%;
-}
-
-.dropdownRight {
-    left: 100%;
-    top: 0;
-}
-
-.dropdownBottom {
-    top: 100%;
-}
-
-.dropdownLeft {
-    right: 100%;
-    top: 0;
+.disabled {
+    opacity: 0.4;
+    cursor: default;
 }

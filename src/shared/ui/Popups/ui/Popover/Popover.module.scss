@@ -1,0 +1,23 @@
+.trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    min-width: 350px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 5px;
+    margin-top: 3px;
+    padding: 8px 10px 30px;
+    -webkit-box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
+    box-shadow: 0 0 6px 2px rgb(0 0 0 / 20%);
+}

@@ -1,20 +1,16 @@
-.listBox {
-    position: relative;
+.button,
+.buttonWrapper {
+    background: none;
+    border: none;
     width: 100%;
 }
 
-.trigger {
-    background-color: #e1e1e1;
-    min-width: 200px;
-    border-radius: 10px;
-    width: 100%;
-}
-
-.options {
+.items {
     display: flex;
     flex-direction: column;
     position: absolute;
     z-index: 10;
+    min-width: 200px;
     width: 100%;
     background: var(--white);
     border-radius: 5px;
@@ -33,31 +29,7 @@
     justify-content: center;
     width: 100%;
     min-height: 50px;
-}
-
-.activeItem {
-    background-color: var(--inverted-secondary-color);
-}
-
-.disabled {
-    opacity: 0.4;
-    cursor: default;
-}
-
-.dropdownTop {
-    bottom: 100%;
-}
-
-.dropdownRight {
-    left: 100%;
-    top: 0;
-}
-
-.dropdownBottom {
-    top: 100%;
-}
-
-.dropdownLeft {
-    right: 100%;
-    top: 0;
+    background: none;
+    border: none;
+    text-transform: none;
 }
