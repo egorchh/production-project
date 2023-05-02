@@ -11,14 +11,16 @@ interface PopoverProps {
     trigger: ReactNode;
     dropdownDirection?: DropdownDirection;
     children: ReactNode;
+    unmount?: boolean;
 }
 
 export const Popover = memo((props: PopoverProps) => {
     const {
         className,
         trigger,
-        dropdownDirection = 'bottom',
+        dropdownDirection = 'left',
         children,
+        unmount,
     } = props;
 
     const itemsClasses = [
@@ -33,7 +35,7 @@ export const Popover = memo((props: PopoverProps) => {
                 {trigger}
             </PopoverComponent.Button>
 
-            <PopoverComponent.Panel unmount className={classNames(styles.panel, {}, itemsClasses)}>
+            <PopoverComponent.Panel unmount={unmount} className={classNames(styles.panel, {}, itemsClasses)}>
                 {children}
             </PopoverComponent.Panel>
         </PopoverComponent>

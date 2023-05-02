@@ -3,6 +3,7 @@ import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback, MutableRefObject,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 import CloseButton from '../../assets/icons/close-button.svg';
@@ -57,10 +58,6 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    };
-
     const mods: Mods = {
         [styles.opened]: isOpening,
         [styles.closed]: isClosing,
@@ -73,11 +70,10 @@ export const Modal = (props: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(styles.modal, mods, [className, theme])}>
-                <div className={styles.overlay} onClick={closeHandler}>
-                    <div className={styles.content} onClick={onContentClick}>
-                        <CloseButton onClick={closeHandler} className={styles.closeBtn} />
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div className={styles.content}>
+                    <CloseButton onClick={closeHandler} className={styles.closeBtn} />
+                    {children}
                 </div>
             </div>
         </Portal>
