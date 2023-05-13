@@ -1,8 +1,9 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
-    ReactNode, MouseEvent, useState, useRef, useEffect, useCallback, MutableRefObject,
+    ReactNode,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
@@ -13,66 +14,39 @@ interface ModalProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
+
+const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
     const {
-        className, children, isOpen, onClose,
+        className,
+        children,
+        isOpen,
+        onClose,
+        lazy,
     } = props;
 
-    const ANIMATION_DELAY = 300;
+    const { close, isClosing, isMounted } = useModal({ onClose, animationDelay: ANIMATION_DELAY, isOpen });
 
-    const [isClosing, setIsClosing] = useState(false);
-    const [isOpening, setIsOpening] = useState(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
-
-    useEffect(() => {
-        if (isOpen) {
-            timerRef.current = setTimeout(() => {
-                setIsOpening(true);
-            }, 0);
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            setIsOpening(false);
-            clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
-
     const mods: Mods = {
-        [styles.opened]: isOpening,
+        [styles.opened]: isOpen,
         [styles.closed]: isClosing,
     };
 
-    if (!isOpen) {
+    if (lazy && !isMounted) {
         return null;
     }
 
     return (
         <Portal>
             <div className={classNames(styles.modal, mods, [className, theme])}>
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
                 <div className={styles.content}>
-                    <CloseButton onClick={closeHandler} className={styles.closeBtn} />
+                    <CloseButton onClick={close} className={styles.closeBtn} />
                     {children}
                 </div>
             </div>
