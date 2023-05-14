@@ -104,7 +104,7 @@ const BottomSheetContent = memo((props: BottomSheetProps) => {
     );
 });
 
-export const BottomSheet = (props: BottomSheetProps) => {
+const BottomSheetAsync = (props: BottomSheetProps) => {
     const { isLoaded } = useAnimationModules();
 
     if (!isLoaded) {
@@ -112,8 +112,12 @@ export const BottomSheet = (props: BottomSheetProps) => {
     }
 
     return (
-        <AnimationProvider>
-            <BottomSheetContent {...props} />
-        </AnimationProvider>
+        <BottomSheetContent {...props} />
     );
 };
+
+export const BottomSheet = (props: BottomSheetProps) => (
+    <AnimationProvider>
+        <BottomSheetAsync {...props} />
+    </AnimationProvider>
+);
