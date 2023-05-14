@@ -1,11 +1,11 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import PlateIcon from 'shared/assets/icons/plate-view.svg';
-import ListIcon from 'shared/assets/icons/list-view.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleListView } from 'entities/Article';
-import { AppButton, AppButtonTheme } from 'shared/ui';
-import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import PlateIcon from '@/shared/assets/icons/plate-view.svg';
+import ListIcon from '@/shared/assets/icons/list-view.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { ArticleListView } from '@/entities/Article';
+import { AppButton, AppButtonTheme } from '@/shared/ui';
+import { AppButtonSize } from '@/shared/ui/AppButton/ui/AppButton';
 import styles from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

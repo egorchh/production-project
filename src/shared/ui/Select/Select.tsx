@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import {
     ChangeEvent, useMemo,
 } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Select.module.scss';
 
 export interface SelectOption<T extends string> {

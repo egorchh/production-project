@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { MenuDropdown, MenuDropdownItem } from 'shared/ui/Popups';
+import { useDispatch, useSelector } from 'react-redux';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { MenuDropdown, MenuDropdownItem } from '@/shared/ui/Popups';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from 'entities/User';
-import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
-import { useDispatch, useSelector } from 'react-redux';
+} from '@/entities/User';
+import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
 import styles from './AvatarDropdown.module.scss';
 
 interface avatarDropdownProps {

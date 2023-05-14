@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { ArticleList } from 'entities/Article';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleList } from '@/entities/Article';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     getArticles,
 } from '../../model/slices/articlePageSlice';

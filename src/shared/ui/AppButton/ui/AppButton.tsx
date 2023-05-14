@@ -1,7 +1,7 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     ButtonHTMLAttributes, memo,
 } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import styles from './AppButton.module.scss';
 
 export enum AppButtonTheme {

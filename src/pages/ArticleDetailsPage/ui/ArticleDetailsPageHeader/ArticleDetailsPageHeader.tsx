@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from 'shared/ui';
-import { AppButtonSize } from 'shared/ui/AppButton/ui/AppButton';
-import ArrowLeft from 'shared/assets/icons/arrow-left.svg';
-import EditIcon from 'shared/assets/icons/edit-article.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
 import { useSelector } from 'react-redux';
-import { getArticleDetailsData } from 'entities/Article';
 import { useNavigate } from 'react-router';
-import { AppRoutes } from 'shared/config/routerConfig/routerConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppButton, AppButtonTheme } from '@/shared/ui';
+import { AppButtonSize } from '@/shared/ui/AppButton/ui/AppButton';
+import ArrowLeft from '@/shared/assets/icons/arrow-left.svg';
+import EditIcon from '@/shared/assets/icons/edit-article.svg';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { getArticleDetailsData } from '@/entities/Article';
+import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
 import { getCanUserEditArticle } from '../../model/selectors/article';
 import styles from './ArticleDetailsPageHeader.module.scss';
 

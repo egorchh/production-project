@@ -1,7 +1,7 @@
 import { Fragment, ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import { AppButton } from '../../../AppButton/ui/AppButton';
 import { AppLink } from '../../../AppLink/ui/AppLink';

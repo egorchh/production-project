@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { StoryContainer } from 'shared/config/storybook/ui/StoryContainer/StoryContainer';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { NotificationList } from './NotificationList';
 
 export default {

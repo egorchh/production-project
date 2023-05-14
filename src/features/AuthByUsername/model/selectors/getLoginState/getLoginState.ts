@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { LoginSchema } from '../../types/loginSchema';
 
 const initialState: LoginSchema = {

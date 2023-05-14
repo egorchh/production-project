@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { ValidateProfileError } from '../../consts/consts';
 import { getProfileEditedData } from '../../selectors/getProfileEditedData/getProfileEditedData';
 import { Profile } from '../../types/profile';

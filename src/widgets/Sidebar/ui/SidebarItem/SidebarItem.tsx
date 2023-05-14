@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkTheme } from 'shared/ui';
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { AppLink, AppLinkTheme } from '@/shared/ui';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { getUserAuthData } from '@/entities/User';
+import { Icon } from '@/shared/ui/Icon/Icon';
 import { SidebarItemInterface } from '../../model/types/sidebar';
 import styles from './SidebarItem.module.scss';
 

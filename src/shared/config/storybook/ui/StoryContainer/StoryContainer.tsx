@@ -1,4 +1,4 @@
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import { ReactNode } from 'react';
 import styles from './SrotyContainer.module.scss';
 

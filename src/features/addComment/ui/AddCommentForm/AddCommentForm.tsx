@@ -1,16 +1,16 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Input } from 'shared/ui/Input/ui/Input';
-import { AppButton, AppButtonTheme } from 'shared/ui';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Input } from '@/shared/ui/Input/ui/Input';
+import { AppButton, AppButtonTheme } from '@/shared/ui';
 import {
     DynamicModuleLoader,
     ReducersList,
-} from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Icon } from 'shared/ui/Icon/Icon';
-import SendCommentSVG from 'shared/assets/icons/send-comment.svg';
+} from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import SendCommentSVG from '@/shared/assets/icons/send-comment.svg';
 import { addCommentActions, addCommentReducer } from '../../model/slice/addCommentSlice';
 import {
     getAddCommentText,

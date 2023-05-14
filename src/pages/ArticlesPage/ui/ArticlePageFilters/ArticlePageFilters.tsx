@@ -1,17 +1,17 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     ArticleListView, ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs,
-} from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticleViewSelector } from 'features/selectArticleView';
-import { Input } from 'shared/ui/Input/ui/Input';
-import { SortOrder } from 'shared/types';
-import { Card } from 'shared/ui/Card/Card';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem } from 'shared/ui/Tabs/Tabs';
+} from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticleViewSelector } from '@/features/selectArticleView';
+import { Input } from '@/shared/ui/Input/ui/Input';
+import { SortOrder } from '@/shared/types';
+import { Card } from '@/shared/ui/Card/Card';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { TabItem } from '@/shared/ui/Tabs/Tabs';
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,

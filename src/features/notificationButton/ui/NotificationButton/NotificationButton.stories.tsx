@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { StoryContainer } from 'shared/config/storybook/ui/StoryContainer/StoryContainer';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import withMock from 'storybook-addon-mock';
-import { Notification } from 'entities/Notification/model/types/notification';
+import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Notification } from '@/entities/Notification/model/types/notification';
 import { NotificationButton } from './NotificationButton';
 
 const notification: Notification = {
