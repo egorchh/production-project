@@ -41,11 +41,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             {isMobile ? (
                 <>
                     {trigger}
-                    <AnimationProvider>
-                        <BottomSheet isOpen={isBottomSheetOpen} onClose={onCloseBottomSheet}>
-                            <NotificationList />
-                        </BottomSheet>
-                    </AnimationProvider>
+                    <BottomSheet isOpen={isBottomSheetOpen} onClose={onCloseBottomSheet}>
+                        <NotificationList />
+                    </BottomSheet>
                 </>
             ) : (
                 <Popover

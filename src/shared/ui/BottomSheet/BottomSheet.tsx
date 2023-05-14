@@ -4,7 +4,7 @@ import React, {
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import { useAnimationModules } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationModules } from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './BottomSheet.module.scss';
@@ -111,5 +111,9 @@ export const BottomSheet = (props: BottomSheetProps) => {
         return null;
     }
 
-    return <BottomSheetContent {...props} />;
+    return (
+        <AnimationProvider>
+            <BottomSheetContent {...props} />
+        </AnimationProvider>
+    );
 };
