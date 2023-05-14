@@ -115,7 +115,9 @@
     "react-i18next": "^11.18.3",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "storybook": "^7.0.5"
+    "storybook": "^7.0.5",
+    "@react-spring/web": "^9.5.2",
+    "@use-gesture/react": "^10.2.19"
   },
   "loki": {
     "configurations": {

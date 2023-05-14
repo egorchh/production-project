@@ -12,20 +12,15 @@
 }
 
 .content {
-    height: 70%;
+    z-index: 1000;
+    position: fixed;
+    left: 2vw;
+    height: calc(100vh + 100px);
+    width: 96vw;
+    border-radius: 12px 12px 0;
     background: var(--bg-color);
-    bottom: 0;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    position: relative;
-    width: 100%;
-    min-height: 100px;
-    padding: 20px;
-    transition: 0.3s transform;
-    transform: translateY(100%);
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 10000;
+    touch-action: none;
+    padding: 15px;
 }
 
 .content::before {
@@ -34,9 +29,9 @@
     display: block;
     width: 100px;
     height: 10px;
-    background: var(--bg-color);
+    background: var(--overlay-color);
     margin: auto;
-    bottom: 40px;
+    bottom: 5px;
     border-radius: 12px;
 }
 
