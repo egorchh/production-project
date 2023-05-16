@@ -18,6 +18,7 @@ import {
 } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import styles from './ArticleDetailsPage.module.scss';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -39,12 +40,17 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         );
     }
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id || '1'} />
                 <ArticleRecommendationsList />
+                <ArticleRating className={styles.articleRating} articleId={id} />
                 <Text
                     className={styles.commentsTitle}
                     align={TextAlign.LEFT}

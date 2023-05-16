@@ -36,7 +36,7 @@ export const MenuDropdown = (props: MenuDropdownProps) => {
 
     return (
         <Menu as="div" className={classNames(commonStyles.popup, {}, [className])}>
-            <Menu.Button className={styles.buttonWrapper}>
+            <Menu.Button as="div" className={styles.buttonWrapper}>
                 <AppButton className={styles.button}>
                     {trigger}
                 </AppButton>

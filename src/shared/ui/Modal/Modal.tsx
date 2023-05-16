@@ -15,6 +15,7 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     lazy?: boolean;
+    withoutCloseButton?: boolean
 }
 
 const ANIMATION_DELAY = 300;
@@ -26,6 +27,7 @@ export const Modal = (props: ModalProps) => {
         isOpen,
         onClose,
         lazy,
+        withoutCloseButton = false,
     } = props;
 
     const { close, isClosing, isMounted } = useModal({ onClose, animationDelay: ANIMATION_DELAY, isOpen });
@@ -46,7 +48,7 @@ export const Modal = (props: ModalProps) => {
             <div className={classNames(styles.modal, mods, [className, theme])}>
                 <Overlay onClick={close} />
                 <div className={styles.content}>
-                    <CloseButton onClick={close} className={styles.closeBtn} />
+                    {!withoutCloseButton && <CloseButton onClick={close} className={styles.closeBtn} />}
                     {children}
                 </div>
             </div>

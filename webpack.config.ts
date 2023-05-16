@@ -27,7 +27,5 @@ module.exports = (env: BuildEnv) => {
         project: 'frontend',
     });
 
-    config.resolve!.alias = { '@': paths.src };
-
     return config;
 };

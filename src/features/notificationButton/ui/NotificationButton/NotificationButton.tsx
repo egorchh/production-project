@@ -7,7 +7,6 @@ import { Popover } from '@/shared/ui/Popups';
 import { DropdownDirection } from '@/shared/types/ui';
 import { BottomSheet } from '@/shared/ui/BottomSheet/BottomSheet';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
 import styles from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {

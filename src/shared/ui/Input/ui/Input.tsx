@@ -11,6 +11,7 @@ interface InputProps extends HTMLInputProps {
     value?: string | number;
     onChange?: (value: string) => void;
     readonly?: boolean;
+    fullWidth?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -21,6 +22,7 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         onChange,
         readonly,
+        fullWidth,
         ...otherProps
     } = props;
 
@@ -30,6 +32,7 @@ export const Input = memo((props: InputProps) => {
 
     const mods: Mods = {
         [styles.readonly]: readonly,
+        [styles.fullWidth]: fullWidth,
     };
 
     return (

@@ -31,7 +31,7 @@ export const Popover = memo((props: PopoverProps) => {
         <PopoverComponent
             className={classNames(commonStyles.popup, {}, [className, styles.popover])}
         >
-            <PopoverComponent.Button className={styles.trigger}>
+            <PopoverComponent.Button as="div" className={styles.trigger}>
                 {trigger}
             </PopoverComponent.Button>
 
