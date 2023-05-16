@@ -6,10 +6,13 @@ import { Theme } from '@/app/providers/ThemeProvider/lib/ThemeContext';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {
-    title: 'widget/ThemeSwitcher',
+    title: 'widgets/ThemeSwitcher',
     component: ThemeSwitcher,
     argTypes: {
         backgroundColor: { control: 'color' },
+    },
+    args: {
+        invertedColor: true,
     },
 } as ComponentMeta<typeof ThemeSwitcher>;
 

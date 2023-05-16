@@ -1,5 +1,5 @@
 import '@/app/styles/index.scss';
-import { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import styles from './SrotyContainer.module.scss';
 
 export const StoryContainer = ({ children }: { children: ReactNode }) => (

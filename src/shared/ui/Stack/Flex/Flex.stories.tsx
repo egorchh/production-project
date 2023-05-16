@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from '../../Avatar/Avatar';
 import { Flex } from './Flex';
+import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
     title: 'shared/Stack/Flex',
@@ -13,19 +14,15 @@ export default {
 } as ComponentMeta<typeof Flex>;
 
 const Template: ComponentStory<typeof Flex> = (args) => (
-    <div style={{ height: '100vh' }}>
+    <StoryContainer>
         <Flex {...args} />
-    </div>
+    </StoryContainer>
 );
 
 export const WithSingleElement = Template.bind({});
 WithSingleElement.args = {
     children: (
-        <>
-            <Avatar />
-            <Avatar />
-            <Avatar />
-        </>
+        <Avatar />
     ),
     fullHeight: true,
 };

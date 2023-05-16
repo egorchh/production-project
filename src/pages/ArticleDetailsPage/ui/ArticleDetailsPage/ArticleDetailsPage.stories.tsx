@@ -31,7 +31,17 @@ Primary.args = {};
 Primary.decorators = [StoreDecorator(
     {
         articleDetails: {
-            data: articleData,
+            data: {
+                id: '1',
+                img: '',
+                createdAt: '',
+                views: 123,
+                user: { id: '1', username: '123' },
+                blocks: [],
+                type: [],
+                title: '123',
+                subtitle: 'sdad',
+            },
         },
     },
 )];

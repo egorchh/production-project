@@ -8,9 +8,10 @@ import { Icon } from '@/shared/ui/Icon/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;
+    invertedColor?: boolean;
 }
 
-export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({ className, invertedColor }: ThemeSwitcherProps) => {
     const { toggleTheme } = useTheme();
 
     return (
@@ -20,7 +21,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
             size={AppButtonSize.M}
             onClick={toggleTheme}
         >
-            <Icon Svg={ThemeIcon} />
+            <Icon Svg={ThemeIcon} invertedColor={invertedColor} />
         </AppButton>
     );
 });

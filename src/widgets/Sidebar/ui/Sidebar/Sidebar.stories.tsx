@@ -7,7 +7,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Sidebar } from './Sidebar';
 
 export default {
-    title: 'widget/Sidebar',
+    title: 'widgets/Sidebar',
     component: Sidebar,
     argTypes: {
         backgroundColor: { control: 'color' },
@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [
-    ThemeDecorator(Theme.DARK),
+    ThemeDecorator(Theme.LIGHT),
     StoreDecorator({
         user: { authData: {} },
     }),

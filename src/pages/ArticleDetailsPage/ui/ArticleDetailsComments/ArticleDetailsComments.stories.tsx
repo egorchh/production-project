@@ -4,7 +4,7 @@ import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/Stor
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 export default {
-    title: 'shared/ArticleDetailsComments',
+    title: 'pages/Article/ArticleDetailsComments',
     component: ArticleDetailsComments,
     argTypes: {
         backgroundColor: { control: 'color' },
