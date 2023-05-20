@@ -1,7 +1,6 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleListView } from '@/entities/Article';
-import { ArticleType } from '@/entities/Article/model/consts/consts';
+import { ArticleListView, ArticleType } from '@/entities/Article';
 import { fetchArticlesList } from './fetchArticlesList';
 
 const articles = [

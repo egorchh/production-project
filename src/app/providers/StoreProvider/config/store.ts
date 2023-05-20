@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from '@/entities/User';
 import { $api } from '@/shared/api/api';
-import { scrollRestorationReducer } from '@/features/scrollRestoration/model';
+import { scrollRestorationReducer } from '@/features/scrollRestoration';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArgs } from './StateSchema';

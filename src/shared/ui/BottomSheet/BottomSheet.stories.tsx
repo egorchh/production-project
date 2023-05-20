@@ -4,8 +4,7 @@ import withMock from 'storybook-addon-mock';
 import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
 import { BottomSheet } from './BottomSheet';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Notification } from '@/entities/Notification/model/types/notification';
-import { NotificationList } from '@/entities/Notification';
+import { Notification } from '@/entities/Notification';
 
 const notification: Notification = {
     id: '1',

@@ -77,7 +77,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'react/no-array-index-key': 'off',
-        'feature-sliced-design-validator/path-checker': 'error',
+        'feature-sliced-design-validator/path-checker': ['error', { alias: '@' }],
+        'feature-sliced-design-validator/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

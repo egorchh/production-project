@@ -9,7 +9,7 @@ import { ArticleDetailsSchema } from '@/entities/Article';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { AddCommentSchema } from '@/features/addComment';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
-import { ScrollRestorationSchema } from '@/features/scrollRestoration/model';
+import { ScrollRestorationSchema } from '@/features/scrollRestoration';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
