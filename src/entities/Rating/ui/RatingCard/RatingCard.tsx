@@ -1,6 +1,5 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card';
 import { Text } from '@/shared/ui/Text';
 import { HStack, VStack } from '@/shared/ui/Stack';

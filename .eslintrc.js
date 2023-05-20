@@ -30,6 +30,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'feature-sliced-design-validator',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': ['error', 4],
@@ -77,6 +78,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'react/no-array-index-key': 'off',
+        // Feature Sliced Design
         'feature-sliced-design-validator/path-checker': ['error', { alias: '@' }],
         'feature-sliced-design-validator/public-api-imports': [
             'error',
@@ -92,6 +94,8 @@ module.exports = {
                 ignoreImportPatterns: ['**/StoreProvider', '**/index.scss', '**/testing'],
             },
         ],
+        // Unused imports
+        'unused-imports/no-unused-imports': 'error',
     },
     globals: {
         __IS_DEV__: true,
