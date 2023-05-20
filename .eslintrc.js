@@ -78,7 +78,13 @@ module.exports = {
         'no-param-reassign': 'off',
         'react/no-array-index-key': 'off',
         'feature-sliced-design-validator/path-checker': ['error', { alias: '@' }],
-        'feature-sliced-design-validator/public-api-imports': ['error', { alias: '@' }],
+        'feature-sliced-design-validator/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilePatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

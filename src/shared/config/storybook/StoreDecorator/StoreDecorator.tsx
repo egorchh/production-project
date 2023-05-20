@@ -1,16 +1,12 @@
 import '@/app/styles/index.scss';
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-// eslint-disable-next-line feature-sliced-design-validator/public-api-imports
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
+import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/EditableProfileCard';
 import { ReducersList } from '@/shared/lib/DynamicModuleLoader/DynamicModuleLoader';
-// eslint-disable-next-line feature-sliced-design-validator/public-api-imports
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
-// eslint-disable-next-line feature-sliced-design-validator/public-api-imports
-import { addCommentReducer } from '@/features/addComment/model/slice/addCommentSlice';
-// eslint-disable-next-line feature-sliced-design-validator/public-api-imports
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices';
+import { articleDetailsReducer } from '@/entities/Article/testing';
+import { addCommentReducer } from '@/features/addComment/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
