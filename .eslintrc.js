@@ -85,6 +85,13 @@ module.exports = {
                 testFilePatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
             },
         ],
+        'feature-sliced-design-validator/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/index.scss', '**/testing'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

@@ -1,12 +1,11 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-line.svg';
-import { Text, TextAlign } from '@/shared/ui/Text/Text';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Text, TextAlign } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/Avatar';
 import { AppButton, AppButtonTheme, AppLink } from '@/shared/ui';
-import { AppRoutes } from '@/shared/config/routerConfig/routerConfig';
 import { ArticleBlockType, ArticleListView } from '../../model/consts/consts';
 import {
     ArticleBlockText,
@@ -16,6 +15,7 @@ import {
     ArticleTextBlockComponent,
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleListItem.module.scss';
+import { AppRoutes } from '@/shared/const/router';
 
 interface ArticleListItemProps {
     className?: string;

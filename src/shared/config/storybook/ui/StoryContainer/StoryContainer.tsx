@@ -1,5 +1,6 @@
+// eslint-disable-next-line feature-sliced-design-validator/layer-imports
 import '@/app/styles/index.scss';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import styles from './SrotyContainer.module.scss';
 
 export const StoryContainer = ({ children }: { children: ReactNode }) => (

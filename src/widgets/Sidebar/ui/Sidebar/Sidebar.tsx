@@ -4,9 +4,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppButton, AppButtonTheme,
 } from '@/shared/ui';
-import { AppButtonSize } from '@/shared/ui/AppButton/ui/AppButton';
+import { AppButtonSize } from '@/shared/ui/AppButton';
 import { VStack } from '@/shared/ui/Stack';
-import { LangSwitcher, ThemeSwitcher } from '@/widgets';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';

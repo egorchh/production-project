@@ -3,9 +3,9 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from '@/shared/ui';
-import { AppButtonSize } from '@/shared/ui/AppButton/ui/AppButton';
-import { Input } from '@/shared/ui/Input/ui/Input';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { AppButtonSize } from '@/shared/ui/AppButton';
+import { Input } from '@/shared/ui/Input';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import {
     DynamicModuleLoader,
     ReducersList,

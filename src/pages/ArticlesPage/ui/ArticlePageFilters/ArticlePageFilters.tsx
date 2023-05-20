@@ -7,11 +7,11 @@ import {
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticleViewSelector } from '@/features/selectArticleView';
-import { Input } from '@/shared/ui/Input/ui/Input';
+import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem } from '@/shared/ui/Tabs/Tabs';
+import { TabItem } from '@/shared/ui/Tabs';
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,

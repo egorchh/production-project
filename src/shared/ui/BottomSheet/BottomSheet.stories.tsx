@@ -4,6 +4,7 @@ import withMock from 'storybook-addon-mock';
 import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
 import { BottomSheet } from './BottomSheet';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+// eslint-disable-next-line feature-sliced-design-validator/layer-imports
 import { Notification } from '@/entities/Notification';
 
 const notification: Notification = {
