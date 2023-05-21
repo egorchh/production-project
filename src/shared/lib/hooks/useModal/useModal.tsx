@@ -12,13 +12,17 @@ interface UseModalProps {
     animationDelay?: number;
 }
 
-export function useModal(props: UseModalProps) {
-    const {
-        onClose,
-        animationDelay = 300,
-        isOpen,
-    } = props;
-
+/**
+ * Хук для работы с модальными компонентами (shared/ui/popups)
+ * @param onClose
+ * @param animationDelay
+ * @param isOpen
+ */
+export function useModal({
+    onClose,
+    animationDelay = 300,
+    isOpen,
+}: UseModalProps) {
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;

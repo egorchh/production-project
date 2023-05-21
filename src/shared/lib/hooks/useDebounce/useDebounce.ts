@@ -4,6 +4,11 @@ import {
     useRef,
 } from 'react';
 
+/**
+ * Хук, позволяющий отменять предыдущий вызов функции пока не истечет delay. Используется для оптимизации.
+ * @param callback
+ * @param delay - задержка в мс
+ */
 export function useDebounce(callback: (...args: any[]) => void, delay: number) {
     const timer = useRef() as MutableRefObject<any>;
 

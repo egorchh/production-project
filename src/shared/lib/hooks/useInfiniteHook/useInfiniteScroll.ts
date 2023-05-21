@@ -6,6 +6,12 @@ export interface UseInfiniteScrollOptions {
     wrapperRef: MutableRefObject<HTMLElement>;
 }
 
+/**
+ * Хук, используемый для подключения бесконечного скролла к списку
+ * @param callback
+ * @param wrapperRef
+ * @param triggerRef
+ */
 export function useInfiniteScroll({ callback, wrapperRef, triggerRef }: UseInfiniteScrollOptions) {
     const observer = useRef<IntersectionObserver | null>(null);
 

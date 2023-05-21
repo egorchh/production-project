@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * Хук, используемый для определения типа платформы mobile/desktop
+ */
 export const useDevice = () => {
     const [isMobile, setIsMobile] = useState(false);
 
