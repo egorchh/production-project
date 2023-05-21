@@ -9,54 +9,63 @@ import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { AppRouterProps } from '@/shared/types/router';
-import { AppRoutes } from '@/shared/const/router';
+import {
+    getRouteAbout, getRouteAdmin,
+    getRouteArticleCreate,
+    getRouteArticleDetails,
+    getRouteArticleEdit,
+    getRouteArticles,
+    getRouteForbidden,
+    getRouteMain,
+    getRouteProfile,
+} from '@/shared/const/router';
 
 export const routerConfig: Array<AppRouterProps> = [
     {
-        path: AppRoutes.MAIN,
+        path: getRouteMain(),
         element: <MainPage />,
     },
     {
-        path: AppRoutes.ABOUT,
+        path: getRouteAbout(),
         element: <AboutPage />,
     },
     {
-        path: `${AppRoutes.PROFILE}:id`,
+        path: getRouteProfile(':id'),
         element: <ProfilePage />,
         authOnly: true,
     },
     {
-        path: AppRoutes.ARTICLES,
+        path: getRouteArticles(),
         element: <ArticlesPage />,
         authOnly: true,
     },
     {
-        path: `${AppRoutes.ARTICLE_DETAILS}:id`,
+        path: getRouteArticleDetails(':id'),
         element: <ArticleDetailsPage />,
         authOnly: true,
     },
     {
-        path: `${AppRoutes.ARTICLE_EDIT}`,
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
         authOnly: true,
     },
     {
-        path: `${AppRoutes.ARTICLE_CREATE}`,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
         authOnly: true,
     },
     {
-        path: `${AppRoutes.ADMIN_PANEL}`,
+        path: getRouteAdmin(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.MANAGER, UserRole.ADMIN],
     },
     {
-        path: AppRoutes.PAGE404,
-        element: <Page404 />,
+        path: getRouteForbidden(),
+        element: <ForbiddenPage />,
     },
     {
-        path: AppRoutes.FORBIDDEN,
-        element: <ForbiddenPage />,
+        path: '*',
+        element: <Page404 />,
     },
 ];
