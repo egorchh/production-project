@@ -11,8 +11,9 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import styles from './Page.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children?: ReactNode;
     onScrollEnd?: () => void;
@@ -51,6 +52,7 @@ export const Page = (props: PageProps) => {
         <section
             ref={wrapperRef}
             className={classNames(styles.page, {}, [className])}
+            data-testid={props['data-testid'] ?? 'Page'}
             onScroll={onScroll}
         >
             {children}
