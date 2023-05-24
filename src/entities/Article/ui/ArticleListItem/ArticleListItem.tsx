@@ -16,6 +16,8 @@ import {
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleListItem.module.scss';
 import { AppRoutes } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -59,7 +61,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         className={styles.types}
                     />
                 </div>
-                <img className={styles.img} src={article.img} alt={article.title} />
+                <AppImage
+                    fallback={<Skeleton width="100%" height={250} />}
+                    className={styles.img}
+                    src={article.img}
+                    alt={article.title}
+                />
                 <div className={styles.textContent}>
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} />
@@ -88,7 +95,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             to={AppRoutes.ARTICLE_DETAILS + article.id}
         >
             <div className={styles.articlesWrapperPlate}>
-                <img
+                <AppImage
+                    fallback={<Skeleton width={200} height={200} />}
                     src={article.img}
                     alt={article.title}
                     height={200}

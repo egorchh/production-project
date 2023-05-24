@@ -1,6 +1,10 @@
 import { useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppImage } from '../AppImage';
 import styles from './Avatar.module.scss';
+import { Skeleton } from '../Skeleton/Skeleton';
+import { Icon } from '../Icon/Icon';
+import UserAvatarSVG from '../../assets/icons/avatar.svg';
 
 interface AvatarProps {
     className?: string;
@@ -13,17 +17,19 @@ export const Avatar = (props: AvatarProps) => {
     const {
         className,
         src,
-        size,
+        size = 70,
         alt = 'User avatar',
     } = props;
 
     const computedStyles = useMemo(() => ({
-        width: size || 70,
-        height: size || 70,
+        width: size,
+        height: size,
     }), [size]);
 
     return (
-        <img
+        <AppImage
+            fallback={<Skeleton width={size} height={size} borderRadius="50%" />}
+            errorFallback={<Icon Svg={UserAvatarSVG} width={size} height={size} />}
             className={classNames(styles.avatar, {}, [className])}
             alt={alt}
             style={computedStyles}
