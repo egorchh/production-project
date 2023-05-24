@@ -11,7 +11,10 @@ export const Page404 = ({ className }: Page404Props) => {
     const { t } = useTranslation('404');
 
     return (
-        <Page className={classNames(styles.page404, {}, [className])}>
+        <Page
+            data-testid="Page404"
+            className={classNames(styles.page404, {}, [className])}
+        >
             <div className={styles.container}>
                 <h1>
                     {t('Страница не найдена')}
