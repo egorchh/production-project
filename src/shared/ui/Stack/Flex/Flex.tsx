@@ -140,6 +140,7 @@ export const Flex = <E extends ElementType = TagsVariants,
         tag,
         fullHeight,
         fullWidth,
+        ...otherProps
     } = props;
 
     const Tag = tag || 'div';
@@ -165,7 +166,8 @@ export const Flex = <E extends ElementType = TagsVariants,
     };
 
     return (
-        <Tag className={classNames(styles.flex, mods, classes)}>
+        // @ts-ignore
+        <Tag className={classNames(styles.flex, mods, classes)} {...otherProps}>
             {children}
         </Tag>
     );

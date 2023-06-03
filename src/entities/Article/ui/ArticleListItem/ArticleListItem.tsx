@@ -43,6 +43,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         return (
             <div
                 className={classNames(styles.articlesWrapperList, {}, [className, styles[view]])}
+                data-testid="ArticleListItem"
             >
                 <div className={styles.topSide}>
                     <div className={styles.header}>
@@ -93,6 +94,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             replace
             className={classNames(styles.PLATE, {}, [className, styles[view]])}
             to={AppRoutes.ARTICLE_DETAILS + article.id}
+            data-testid="ArticleListItem"
         >
             <div className={styles.articlesWrapperPlate}>
                 <AppImage

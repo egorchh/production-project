@@ -31,6 +31,7 @@ export const Tabs = memo((props: TabsProps) => {
                     className={styles.tabWrapper}
                     theme={tab.value === value ? CardTheme.OUTLINED : CardTheme.NORMAL}
                     onClick={clickHandle(tab)}
+                    data-testid={`ArticleTypeTab.${tab.content}`}
                 >
                     {tab.content}
                 </Card>

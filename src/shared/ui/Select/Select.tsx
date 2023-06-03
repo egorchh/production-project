@@ -34,6 +34,7 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
             key={item.value}
             value={item.value}
             className={styles.option}
+            data-testid={`ArticleSortSelectorOption.${item.value}`}
         >
             {item.content}
         </option>
@@ -55,6 +56,7 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
                 value={value}
                 className={styles.select}
                 onChange={onChangeHandler}
+                data-testid={`ArticleSortSelector.${label}`}
             >
                 {optionsList}
             </select>

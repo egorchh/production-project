@@ -90,7 +90,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <div className={styles.skeletonWrapper}>
+            <div className={styles.skeletonWrapper} data-testid="ArticleDetails">
                 <Skeleton
                     className={styles.skeletonLogo}
                     width={200}

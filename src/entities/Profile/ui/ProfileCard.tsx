@@ -94,6 +94,7 @@ export const ProfileCard = ({
                     value={data?.first}
                     placeholder={t('Name')}
                     onChange={onChangeFirstname}
+                    data-testid="ProfileCard.Firstname"
                 />
                 <Input
                     readonly={readonly}

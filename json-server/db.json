@@ -537,6 +537,58 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "guOLlgD"
+    },
+    {
+      "title": "Научная статья - Биология",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "6f91vPH"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [],
+      "id": "KylkK6U"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [],
+      "id": "pWwGse2"
     }
   ],
   "comments": [
@@ -695,6 +747,12 @@
       "userId": "1",
       "text": "123",
       "id": "KmtWJR_"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "dsfsdfsdf",
+      "id": "OBHGvPb"
     }
   ],
   "users": [
@@ -724,6 +782,15 @@
         "MANAGER"
       ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
@@ -748,6 +815,17 @@
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "article-ratings": [
@@ -769,52 +847,29 @@
       "userId": "1",
       "articleId": "3",
       "rate": 3,
-      "id": "9HiJf2e"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 4,
-      "id": "xiSFhcQ"
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 4,
-      "id": "46U1YI9"
-    },
-    {
-      "userId": "1",
-      "articleId": "6",
-      "rate": 4,
-      "id": "0E3tPDK"
-    },
-    {
-      "userId": "1",
-      "articleId": "7",
-      "rate": 4,
-      "id": "99uH4Fr"
-    },
-    {
-      "userId": "1",
-      "articleId": "8",
-      "rate": 4,
-      "feedback": "dasdasdsad",
-      "id": "UpR1LXf"
+      "feedback": "",
+      "id": "I7ofk1u"
     },
     {
       "userId": "1",
       "articleId": "9",
-      "rate": 4,
-      "feedback": "123123",
-      "id": "X2McYGA"
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
     },
     {
       "userId": "1",
       "articleId": "10",
-      "rate": 4,
-      "feedback": "asdasd",
-      "id": "ToX9yoV"
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
     }
   ],
   "profile-ratings": [
@@ -826,11 +881,11 @@
       "profileId": "1"
     },
     {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
       "userId": "1",
-      "profileId": "2",
-      "rate": 5,
-      "feedback": "СУпер чел",
-      "id": "JYpROv5"
+      "profileId": "2"
     }
   ]
 }

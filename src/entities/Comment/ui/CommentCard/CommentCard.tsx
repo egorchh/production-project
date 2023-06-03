@@ -17,7 +17,10 @@ interface CommentCardProps {
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
     if (isLoading) {
         return (
-            <div className={classNames(styles.commentCard, {}, [className])}>
+            <div
+                className={classNames(styles.commentCard, {}, [className])}
+                data-testid="CommentCard.Loading"
+            >
                 <div className={styles.userInfoWrapper}>
                     <Skeleton height={40} width={40} borderRadius="50%" />
                     <Skeleton
@@ -37,7 +40,10 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
     }
 
     return (
-        <div className={classNames(styles.commentCard, {}, [className])}>
+        <div
+            className={classNames(styles.commentCard, {}, [className])}
+            data-testid="CommentCard.Content"
+        >
             <AppLink
                 to={`${AppRoutes.PROFILE}${comment.user.id}`}
                 className={styles.userInfoWrapper}
