@@ -10,7 +10,13 @@ describe('Страница статей и взаимодействие с не�
         cy.getByTestId('ArticleTypeTab.All').click();
     });
 
-    it('Статьи загрузились успешно', () => {
+    it('Статьи загрузились успешно (реальный бэк)', () => {
+        cy.getByTestId('ArticleList').should('exist');
+        cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
+    });
+
+    it('Статьи загрузились успешно (на стабах/фикстурах)', () => {
+        cy.intercept('GET', '**/articles?*', { fixture: 'articles/articles-list.json' });
         cy.getByTestId('ArticleList').should('exist');
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 3);
     });
