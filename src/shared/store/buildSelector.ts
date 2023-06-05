@@ -10,3 +10,5 @@ export function buildSelector<T, Args extends any[]>(selector: Selector<T, Args>
 
     return [useSelectorHook, selector];
 }
+
+// const [useArticleItemById] = buildSelector((state, id: string) => state.articlesPage?.entities[id]);
