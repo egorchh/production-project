@@ -1,17 +1,23 @@
 import React, { Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets';
 import { Sidebar } from '@/widgets/Sidebar';
-import { getUserMounted, userActions } from '@/entities/User';
+import { getUserMounted, initAuthData } from '@/entities/User';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { PageLoader } from '@/widgets/PageLoader';
 
 function App() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const isMounted = useSelector(getUserMounted);
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!isMounted) {
+        return <PageLoader />;
+    }
 
     return (
         <Suspense fallback="">
