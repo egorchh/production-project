@@ -39,4 +39,21 @@
     --green-success: #2ed937;
     --grey-disable: #9a9a9a;
     --white: #fff;
+
+    // redesigned
+
+    --font-family-text-redesigned: "Nunito Sans", sans-serif;
+    --font-family-title-redesigned: "Roboto", sans-serif;
+
+    // s
+    --font-s-redesigned: var(--font-size-s) / var(--font-line-s) var(--font-family-text-redesigned);
+
+    // m
+    --font-m-redesigned: var(--font-size-m) / var(--font-line-m) var(--font-family-text-redesigned);
+
+    // l
+    --font-l-redesigned: var(--font-size-l) / var(--font-line-l) var(--font-family-title-redesigned);
+
+    // xl
+    --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-title-redesigned);
 }

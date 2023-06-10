@@ -1,9 +1,10 @@
 import React, { memo, useCallback, useState } from 'react';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { LoginModal } from '@/features/AuthByUsername';
-import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
+import { LoginModal } from '@/features/AuthByUsername';
+import { HStack } from '@/shared/ui/Stack';
 import styles from './Navbar.module.scss';
 
 export interface NavbarProps {
@@ -22,15 +23,29 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }, []);
 
     return (
-        <HStack
-            className={classNames(styles.navbar, {}, [className])}
-            justify="end"
-            align="center"
-            fullWidth
-        >
-            <NotificationButton />
-            <AvatarDropdown onShowModal={onShowAuthModal} />
-            <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
-        </HStack>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <nav
+                    className={classNames(styles.navbar_redesigned, {}, [className])}
+                >
+                    <NotificationButton />
+                    <AvatarDropdown onShowModal={onShowAuthModal} />
+                    <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
+                </nav>
+            )}
+            off={(
+                <HStack
+                    className={classNames(styles.navbar, {}, [className])}
+                    justify="end"
+                    align="center"
+                    fullWidth
+                >
+                    <NotificationButton />
+                    <AvatarDropdown onShowModal={onShowAuthModal} />
+                    <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
+                </HStack>
+            )}
+        />
     );
 });

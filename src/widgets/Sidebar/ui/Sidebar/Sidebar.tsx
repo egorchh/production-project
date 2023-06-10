@@ -1,16 +1,13 @@
-import React, { memo, useMemo, useState } from 'react';
+import React, {
+    memo, useCallback, useMemo, useState,
+} from 'react';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import {
-    AppButton, AppButtonTheme,
-} from '@/shared/ui';
-import { AppButtonSize } from '@/shared/ui/AppButton';
-import { VStack } from '@/shared/ui/Stack';
-import { LangSwitcher } from '@/features/LangSwitcher';
-import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+
+import { ToggleFeatures } from '@/shared/lib/features';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
-import styles from './Sidebar.module.scss';
+import { Sidebar as SidebarRedesigned } from './redesined/Sidebar';
+import { Sidebar as SidebarDeprecated } from './deprecated/Sidebar';
 
 interface SidebarProps {
     className?: string;
@@ -20,9 +17,9 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(true);
     const sidebarItemList = useSelector(getSidebarItems);
 
-    const onToggleSidebar = () => {
+    const onToggleSidebar = useCallback(() => {
         setCollapsed((prevState) => !prevState);
-    };
+    }, []);
 
     const listLinks = useMemo(
         () => sidebarItemList.map((item) => (
@@ -36,32 +33,24 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     );
 
     return (
-        <div
-            data-testid="sidebar"
-            className={
-                classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])
-            }
-        >
-            <VStack justify="between" fullWidth>
-                <VStack>
-                    {listLinks}
-                </VStack>
-                <VStack spaceBottom="16" gap="8">
-                    <LangSwitcher />
-                    <ThemeSwitcher />
-                </VStack>
-                <AppButton
-                    data-testid="sidebar-toggle"
-                    type="button"
-                    className={styles.button}
-                    square
-                    size={AppButtonSize.M}
-                    theme={AppButtonTheme.BACKGROUND_INVERTED}
-                    onClick={onToggleSidebar}
-                >
-                    {collapsed ? '>' : '<'}
-                </AppButton>
-            </VStack>
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <SidebarRedesigned
+                    className={className}
+                    listLinks={listLinks}
+                    collapsed={collapsed}
+                    onToggleSidebar={onToggleSidebar}
+                />
+            )}
+            off={(
+                <SidebarDeprecated
+                    className={className}
+                    listLinks={listLinks}
+                    collapsed={collapsed}
+                    onToggleSidebar={onToggleSidebar}
+                />
+            )}
+        />
     );
 });
