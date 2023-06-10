@@ -20,6 +20,7 @@ import {
     articlesPageReducer,
 } from '../../model/slices/articlePageSlice';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import { ArticleGreetingModal } from '@/features/ArticleGreetingModal';
 
 interface ArticlesPageProps {
     className?: string;
@@ -50,6 +51,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
             <Page data-testid="ArticlesPage" onScrollEnd={onLoadNextPage} className={classNames('', {}, [className])}>
                 <ArticlePageFilters />
                 <ArticleInfiniteList />
+                <ArticleGreetingModal />
             </Page>
         </DynamicModuleLoader>
     );

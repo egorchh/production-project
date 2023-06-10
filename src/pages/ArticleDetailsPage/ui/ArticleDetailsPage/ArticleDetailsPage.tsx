@@ -19,7 +19,7 @@ import {
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import styles from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import { getFeatureFlag, ToggleFeatures } from '@/shared/lib/features';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -46,19 +46,17 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         return null;
     }
 
-    const articleRating = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating className={styles.articleRating} articleId={id} />,
-        off: () => null,
-    });
-
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id || '1'} />
                 <ArticleRecommendationsList />
-                {articleRating}
+                <ToggleFeatures
+                    feature="isArticleRatingEnabled"
+                    on={<ArticleRating className={styles.articleRating} articleId={id} />}
+                    off={null}
+                />
                 <Text
                     className={styles.commentsTitle}
                     align={TextAlign.LEFT}

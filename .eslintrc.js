@@ -65,6 +65,7 @@ module.exports = {
                 'dropdownDirection',
                 'dataTestId',
                 'text',
+                'feature',
             ],
         }],
         'max-len': ['error', {
