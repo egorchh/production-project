@@ -1,10 +1,9 @@
 import React, { memo, useCallback } from 'react';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import ThemeIcon from '@/shared/assets/icons/theme.svg';
-import { AppButton, AppButtonTheme } from '@/shared/ui';
+import { AppButton, AppButtonTheme, AppButtonSize } from '@/shared/ui/deprecated/AppButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButtonSize } from '@/shared/ui/AppButton';
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 

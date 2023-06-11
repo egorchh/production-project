@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { AppButton, AppButtonTheme } from '@/shared/ui';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import {

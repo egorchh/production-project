@@ -1,14 +1,14 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Card } from '@/shared/ui/Card';
-import { Text } from '@/shared/ui/Text';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { StarRating } from '@/shared/ui/StarRating';
-import { Modal } from '@/shared/ui/Modal';
-import { Input } from '@/shared/ui/Input';
-import { AppButton, AppButtonTheme } from '@/shared/ui';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { StarRating } from '@/shared/ui/deprecated/StarRating';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import { BottomSheet } from '@/shared/ui/BottomSheet';
+import { BottomSheet } from '@/shared/ui/deprecated/BottomSheet';
 
 interface RatingCardProps {
     className?: string;

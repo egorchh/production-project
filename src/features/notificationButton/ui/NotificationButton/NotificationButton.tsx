@@ -1,11 +1,11 @@
 import React, { memo, useCallback, useState } from 'react';
-import { AppButton, AppButtonTheme } from '@/shared/ui';
-import { Icon } from '@/shared/ui/Icon';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import NotificationsIcon from '@/shared/assets/icons/notifications.svg';
 import { NotificationList } from '@/entities/Notification';
-import { Popover } from '@/shared/ui/Popups';
+import { Popover } from '@/shared/ui/deprecated/Popups';
 import { DropdownDirection } from '@/shared/types/ui';
-import { BottomSheet } from '@/shared/ui/BottomSheet';
+import { BottomSheet } from '@/shared/ui/deprecated/BottomSheet';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
 import styles from './NotificationButton.module.scss';
 

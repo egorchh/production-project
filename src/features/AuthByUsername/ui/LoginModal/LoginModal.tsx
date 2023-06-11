@@ -1,7 +1,7 @@
 import { memo, Suspense } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Modal } from '@/shared/ui/Modal';
-import { AppLoader } from '@/shared/ui/AppLoader';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { AppLoader } from '@/shared/ui/deprecated/AppLoader';
 import { LoginFormLazy } from '../LoginForm/LoginForm.lazy';
 
 interface LoginModalProps {

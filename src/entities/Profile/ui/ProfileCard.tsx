@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextTheme } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
-import { AppLoader } from '@/shared/ui/AppLoader';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { AppLoader } from '@/shared/ui/deprecated/AppLoader';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Profile } from '../model/types/profile';
 import styles from './ProfileCard.module.scss';
 

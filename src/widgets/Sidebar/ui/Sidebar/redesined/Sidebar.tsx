@@ -1,8 +1,7 @@
 import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 import styles from './Sidebar.module.scss';
-import { AppLogo } from '@/shared/ui/AppLogo';
 
 interface SidebarProps {
     className?: string;

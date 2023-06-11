@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { CommentCard } from '../CommentCard/CommentCard';
 import styles from './CommentList.module.scss';
 import { Comment } from '../../model/types/comment';

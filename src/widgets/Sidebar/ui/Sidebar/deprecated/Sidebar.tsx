@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     AppButton, AppButtonTheme,
-} from '@/shared/ui';
-import { AppButtonSize } from '@/shared/ui/AppButton';
-import { VStack } from '@/shared/ui/Stack';
+    AppButtonSize,
+} from '@/shared/ui/deprecated/AppButton';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import styles from './Sidebar.module.scss';

@@ -1,11 +1,12 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-line.svg';
-import { Text, TextAlign } from '@/shared/ui/Text';
-import { Avatar } from '@/shared/ui/Avatar';
-import { AppButton, AppButtonTheme, AppLink } from '@/shared/ui';
+import { Text, TextAlign } from '@/shared/ui/deprecated/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import { ArticleBlockType, ArticleListView } from '../../model/consts/consts';
 import {
     ArticleBlockText,
@@ -16,8 +17,8 @@ import {
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleListItem.module.scss';
 import { AppRoutes } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
