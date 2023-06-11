@@ -8,6 +8,7 @@ import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
 import CloseButton from '../../assets/icons/close-button.svg';
+import { Icon } from '../Icon';
 
 interface ModalProps {
     className?: string;
@@ -48,7 +49,7 @@ export const Modal = (props: ModalProps) => {
             <div className={classNames(styles.modal, mods, [className, theme])}>
                 <Overlay onClick={close} />
                 <div className={styles.content}>
-                    {!withoutCloseButton && <CloseButton onClick={close} className={styles.closeBtn} />}
+                    {!withoutCloseButton && <Icon className={styles.closeBtn} Svg={CloseButton} onClick={close} />}
                     {children}
                 </div>
             </div>

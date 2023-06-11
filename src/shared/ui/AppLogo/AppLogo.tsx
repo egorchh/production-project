@@ -4,6 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '../Stack';
 import AliensLogo from '../../assets/icons/logo.svg';
 import styles from './AppLogo.module.scss';
+import { Icon } from '../Icon';
 
 interface AppLogoProps {
     className?: string;
@@ -20,7 +21,12 @@ export const AppLogo = memo(({ className }: AppLogoProps) => {
         >
             <div className={styles.gradient_big} />
             <div className={styles.gradient_small} />
-            <AliensLogo className={styles.logo} />
+            <Icon
+                className={styles.logo}
+                Svg={AliensLogo}
+                width="60"
+                height="60"
+            />
         </HStack>
     );
 });
