@@ -13,6 +13,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     theme?: CardTheme;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const Card = ({
     className,
     children,

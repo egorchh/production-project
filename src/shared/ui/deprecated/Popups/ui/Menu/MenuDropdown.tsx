@@ -22,6 +22,10 @@ type MenuDropdownProps = {
     dropdownDirection?: DropdownDirection;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const MenuDropdown = (props: MenuDropdownProps) => {
     const {
         className,

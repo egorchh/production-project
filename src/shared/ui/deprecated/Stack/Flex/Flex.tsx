@@ -123,6 +123,10 @@ const spaceLeftClasses = {
     40: styles.spaceLeft40,
 };
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const Flex = <E extends ElementType = TagsVariants,
     T extends TagsVariants = E extends TagsVariants? E : never>(props: FlexProps<T>) => {
     const {

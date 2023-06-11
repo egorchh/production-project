@@ -9,6 +9,10 @@ interface SkeletonProps {
     borderRadius?: number | string;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const Skeleton = memo((props: SkeletonProps) => {
     const {
         height,

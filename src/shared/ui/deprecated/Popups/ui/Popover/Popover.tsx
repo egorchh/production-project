@@ -14,6 +14,10 @@ interface PopoverProps {
     unmount?: boolean;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const Popover = memo((props: PopoverProps) => {
     const {
         className,

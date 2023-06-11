@@ -19,6 +19,10 @@ interface BottomSheetProps {
 
 const height = window.innerHeight - 100;
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 const BottomSheetContent = memo((props: BottomSheetProps) => {
     const {
         className,

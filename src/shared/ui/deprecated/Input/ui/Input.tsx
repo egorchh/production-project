@@ -14,6 +14,10 @@ interface InputProps extends HTMLInputProps {
     fullWidth?: boolean;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const Input = memo((props: InputProps) => {
     const {
         className,

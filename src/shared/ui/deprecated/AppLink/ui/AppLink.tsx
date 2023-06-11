@@ -13,6 +13,10 @@ interface AppLinkProps extends LinkProps {
     theme?: AppLinkTheme;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const AppLink = memo(({
     className,
     to,

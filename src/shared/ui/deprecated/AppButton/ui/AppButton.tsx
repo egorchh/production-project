@@ -28,6 +28,10 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const AppButton = memo<AppButtonProps>((
     {
         className,

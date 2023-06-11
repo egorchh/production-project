@@ -19,6 +19,10 @@ interface SelectProps<T extends string> {
     readonly?: boolean;
 }
 
+/**
+ * Компонент устарел, используйте компоненты из директории redesigned
+ * @deprecated
+ */
 export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     const {
         className,
