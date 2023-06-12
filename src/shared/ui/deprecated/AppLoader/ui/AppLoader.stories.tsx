@@ -7,7 +7,7 @@ import { StoryContainer } from '../../../../config/storybook/ui/StoryContainer/S
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Loader',
+    title: 'shared/deprecated/Loader',
     component: AppLoader,
     argTypes: {
         backgroundColor: { control: 'color' },

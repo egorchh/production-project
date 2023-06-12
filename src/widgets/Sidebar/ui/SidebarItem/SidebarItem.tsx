@@ -1,12 +1,10 @@
-import { useTranslation } from 'react-i18next';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { getUserAuthData } from '@/entities/User';
-import { Icon } from '@/shared/ui/deprecated/Icon';
 import { SidebarItemInterface } from '../../model/types/sidebar';
-import styles from './SidebarItem.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { SidebarItem as SidebarItemDeprecated } from './deprecated/SidebarItem';
+import { SidebarItem as SidebarItemRedesigned } from './redesigned/SidebarItem';
 
 interface SidebarItemProps {
     item: SidebarItemInterface
@@ -14,12 +12,6 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
-    const { t } = useTranslation();
-    const {
-        path,
-        text,
-        SidebarIcon,
-    } = item;
     const isAuth = useSelector(getUserAuthData);
 
     if (item.authOnly && !isAuth) {
@@ -27,15 +19,10 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
     }
 
     return (
-        <AppLink
-            className={classNames(styles.sidebarItem, { [styles.collapsed]: collapsed }, [])}
-            to={path}
-            theme={AppLinkTheme.SECONDARY}
-        >
-            <Icon Svg={SidebarIcon} className={styles.icon} />
-            <p className={styles.text}>
-                {t(text)}
-            </p>
-        </AppLink>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<SidebarItemRedesigned item={item} collapsed={collapsed} isAuth={isAuth} />}
+            off={<SidebarItemDeprecated item={item} collapsed={collapsed} isAuth={isAuth} />}
+        />
     );
 };

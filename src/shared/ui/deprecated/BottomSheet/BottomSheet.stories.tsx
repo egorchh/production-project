@@ -14,7 +14,7 @@ const notification: Notification = {
 };
 
 export default {
-    title: 'shared/BottomSheet',
+    title: 'shared/deprecated/BottomSheet',
     component: BottomSheet,
     argTypes: {
         backgroundColor: { control: 'color' },

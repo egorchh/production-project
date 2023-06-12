@@ -2,7 +2,7 @@
     min-height: 100%;
     display: grid;
     grid-template-areas: "sidebar content rigthbar";
-    grid-template-columns: 284px 1fr 175px;
+    grid-template-columns: 284px 1fr 100px;
 }
 
 .content {
@@ -10,6 +10,7 @@
     max-width: 1200px;
     justify-self: center;
     padding: 32px;
+    width: 100%;
 }
 
 .rigthbar,
@@ -21,7 +22,6 @@
 
 .sidebar {
     grid-area: sidebar;
-    justify-self: center;
     padding: 32px;
 }
 

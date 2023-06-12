@@ -4,7 +4,7 @@ import { AppImage } from './AppImage';
 import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/AppImage',
+    title: 'shared/deprecated/AppImage',
     component: AppImage,
     argTypes: {
         backgroundColor: { control: 'color' },

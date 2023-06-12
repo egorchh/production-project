@@ -4,7 +4,7 @@ import { Avatar } from './Avatar';
 import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/Avatar',
+    title: 'shared/deprecated/Avatar',
     component: Avatar,
     argTypes: {
         backgroundColor: { control: 'color' },

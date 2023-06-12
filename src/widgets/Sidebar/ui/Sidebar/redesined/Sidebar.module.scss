@@ -1,8 +1,18 @@
+* {
+    transition: 0.3s;
+}
+
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
     background: var(--light-bg-redesigned);
     width: 220px;
     height: 100%;
     border-radius: 32px;
+    padding: 0 0 35px;
 }
 
 .button {
@@ -14,8 +24,25 @@
 }
 
 .logo {
-    top: 20px;
-    width: 60px;
-    height: 60px;
-    margin: 0 auto;
+    top: 10px;
+    margin: 0 auto 50px;
+}
+
+.collapseButton {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.collapsed {
+    width: var(--sidebar-width-collapsed-redesigned);
+    padding: 0 0 35px;
+
+    .collapseButton {
+        right: 50%;
+        transform: translateX(50%) translateY(-50%) rotate(180deg);
+    }
 }

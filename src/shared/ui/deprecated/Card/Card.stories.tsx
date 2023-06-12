@@ -5,7 +5,7 @@ import { Card, CardTheme } from './Card';
 import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/Card',
+    title: 'shared/deprecated/Card',
     component: Card,
     argTypes: {
         backgroundColor: { control: 'color' },

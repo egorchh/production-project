@@ -4,7 +4,7 @@ import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/Stor
 import { StarRating } from './StarRating';
 
 export default {
-    title: 'shared/StarRating',
+    title: 'shared/deprecated/StarRating',
     component: StarRating,
     argTypes: {
         backgroundColor: { control: 'color' },

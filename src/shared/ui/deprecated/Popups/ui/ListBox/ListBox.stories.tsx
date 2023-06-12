@@ -4,7 +4,7 @@ import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/Stor
 import { ListBox } from './ListBox';
 
 export default {
-    title: 'shared/Popups/ListBox',
+    title: 'shared/deprecated/Popups/ListBox',
     component: ListBox,
     argTypes: {
         backgroundColor: { control: 'color' },

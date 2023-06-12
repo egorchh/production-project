@@ -4,7 +4,7 @@ import { Code } from './Code';
 import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/Code',
+    title: 'shared/deprecated/Code',
     component: Code,
     argTypes: {
         backgroundColor: { control: 'color' },

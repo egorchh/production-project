@@ -5,7 +5,7 @@ import { Text } from '../../../Text/Text';
 import { MenuDropdown } from './MenuDropdown';
 
 export default {
-    title: 'shared/Popups/MenuDropdown',
+    title: 'shared/deprecated/Popups/MenuDropdown',
     component: MenuDropdown,
     argTypes: {
         backgroundColor: { control: 'color' },

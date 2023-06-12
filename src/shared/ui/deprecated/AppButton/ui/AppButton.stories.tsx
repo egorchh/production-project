@@ -7,7 +7,7 @@ import { StoryContainer } from '../../../../config/storybook/ui/StoryContainer/S
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/AppButton',
+    title: 'shared/deprecated/AppButton',
     component: AppButton,
     argTypes: {
         backgroundColor: { control: 'color' },

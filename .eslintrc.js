@@ -66,6 +66,11 @@ module.exports = {
                 'dataTestId',
                 'text',
                 'feature',
+                'fill',
+                'color',
+                'variant',
+                'size',
+                'activeClassName',
             ],
         }],
         'max-len': ['error', {

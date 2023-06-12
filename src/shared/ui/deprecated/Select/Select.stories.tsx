@@ -4,7 +4,7 @@ import { Select } from './Select';
 import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/Select',
+    title: 'shared/deprecated/Select',
     component: Select,
     argTypes: {
         backgroundColor: { control: 'color' },

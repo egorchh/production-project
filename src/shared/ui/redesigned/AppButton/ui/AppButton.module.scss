@@ -1,0 +1,63 @@
+.appButton {
+    cursor: pointer;
+    color: var(--text-redesigned);
+    padding: 6px 15px;
+
+    &:hover {
+        color: var(--accent-redesigned);
+    }
+}
+
+.square.m {
+    min-height: calc(var(--font-line-m) * 1.5);
+    min-width: calc(var(--font-line-m) * 2);
+    font-size: var(--font-m);
+}
+
+.square.l {
+    min-height: calc(var(--font-line-l) * 1.5);
+    min-width: calc(var(--font-line-l) * 2);
+    font-size: calc(var(--font-size-l) * 0.7);
+}
+
+.square.xl {
+    min-height: calc(var(--font-line-xl) * 1.5);
+    min-width: calc(var(--font-line-xl) * 2);
+    font-size: calc(var(--font-size-xl) * 0.7);
+}
+
+.m {
+    padding: 5px 10px;
+    font-size: var(--font-m-redesigned);
+}
+
+.l {
+    padding: 10px 20px;
+    font-size: calc(var(--font-l-redesigned) * 0.7);
+}
+
+.xl {
+    padding: 15px 30px;
+    font-size: calc(var(--font-xl-redesigned) * 0.7);
+}
+
+.clear {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.outline {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: none;
+}
+
+.disabled {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.fullWidth {
+    width: 100%;
+}

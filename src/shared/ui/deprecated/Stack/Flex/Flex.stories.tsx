@@ -5,7 +5,7 @@ import { Flex } from './Flex';
 import { StoryContainer } from '@/shared/config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/Stack/Flex',
+    title: 'shared/deprecated/Stack/Flex',
     component: Flex,
     argTypes: {
         backgroundColor: { control: 'color' },

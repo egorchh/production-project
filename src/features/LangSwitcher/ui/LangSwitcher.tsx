@@ -1,10 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme, AppButtonSize } from '@/shared/ui/deprecated/AppButton';
-import { Icon } from '@/shared/ui/deprecated/Icon';
-import Language from '@/shared/assets/icons/language.svg';
-import styles from './LangSwitcher.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { LangSwitcher as LangSwitcherRedesigned } from './redesigned/LangSwitcher';
+import { LangSwitcher as LangSwitcherDeprecated } from './deprecated/LangSwitcher';
 
 interface LangSwitcherProps {
     className?: string;
@@ -18,13 +16,21 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
     };
 
     return (
-        <AppButton
-            className={classNames('', {}, [className])}
-            theme={AppButtonTheme.CLEAR}
-            size={AppButtonSize.M}
-            onClick={toggleLanguage}
-        >
-            <Icon Svg={Language} className={styles.icon} />
-        </AppButton>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <LangSwitcherRedesigned
+                    className={className}
+                    language={i18n.language}
+                    toggleLanguage={toggleLanguage}
+                />
+            )}
+            off={(
+                <LangSwitcherDeprecated
+                    className={className}
+                    toggleLanguage={toggleLanguage}
+                />
+            )}
+        />
     );
 });

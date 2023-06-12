@@ -5,7 +5,7 @@ import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/Stor
 import { Tabs } from './Tabs';
 
 export default {
-    title: 'shared/Tabs',
+    title: 'shared/deprecated/Tabs',
     component: Tabs,
     argTypes: {
         backgroundColor: { control: 'color' },

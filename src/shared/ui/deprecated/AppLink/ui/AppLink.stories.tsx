@@ -4,7 +4,7 @@ import { AppLink, AppLinkTheme } from './AppLink';
 import { StoryContainer } from '../../../../config/storybook/ui/StoryContainer/StoryContainer';
 
 export default {
-    title: 'shared/AppLink',
+    title: 'shared/deprecated/AppLink',
     component: AppLink,
     argTypes: {
         backgroundColor: { control: 'color' },

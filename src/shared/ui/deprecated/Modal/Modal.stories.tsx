@@ -6,7 +6,7 @@ import { StoryContainer } from '../../../config/storybook/ui/StoryContainer/Stor
 import { Theme } from '@/shared/const/theme';
 
 export default {
-    title: 'shared/Modal',
+    title: 'shared/deprecated/Modal',
     component: Modal,
     argTypes: {
         backgroundColor: { control: 'color' },
