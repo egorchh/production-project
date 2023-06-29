@@ -1,0 +1,10 @@
+.panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    min-width: 350px;
+    width: 100%;
+    padding: 8px 10px 30px;
+    z-index: 10;
+}

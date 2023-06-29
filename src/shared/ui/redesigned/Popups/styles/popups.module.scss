@@ -1,0 +1,32 @@
+.popup {
+    position: relative;
+}
+
+.menu {
+    border: 2px solid var(--accent-redesigned);
+    background: var(--dark-bg-redesigned);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.active {
+    background-color: var(--light-bg-redesigned);
+}
+
+.dropdownTop {
+    bottom: 130%;
+}
+
+.dropdownRight {
+    left: 130%;
+    top: 0;
+}
+
+.dropdownBottom {
+    top: 130%;
+}
+
+.dropdownLeft {
+    right: 130%;
+    top: 0;
+}

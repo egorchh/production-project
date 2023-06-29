@@ -1,0 +1,12 @@
+.dropdown {
+    font-weight: bold;
+    color: var(--inverted-secondary-color);
+}
+
+.avatar {
+    cursor: pointer;
+}
+
+.avatar:hover {
+    outline: 2px solid var(--accent-redesigned);
+}

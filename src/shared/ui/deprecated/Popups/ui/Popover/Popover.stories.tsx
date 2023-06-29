@@ -5,7 +5,7 @@ import NotificationsIcon from '@/shared/assets/icons/notifications.svg';
 import { Text } from '../../../Text/Text';
 import { AppButton, AppButtonTheme } from '../../../AppButton';
 import { Icon } from '../../../Icon/Icon';
-import { VStack } from '../../../Stack';
+import { VStack } from '../../../../common/Stack';
 import { Popover } from './Popover';
 
 export default {

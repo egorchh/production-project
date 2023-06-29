@@ -4,7 +4,7 @@ import {
     AppButton, AppButtonTheme,
     AppButtonSize,
 } from '@/shared/ui/deprecated/AppButton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/common/Stack';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import styles from './Sidebar.module.scss';

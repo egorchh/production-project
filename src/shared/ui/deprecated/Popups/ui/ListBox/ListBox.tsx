@@ -5,7 +5,7 @@ import { mapDirectionClass } from '../../styles/consts';
 import { DropdownDirection } from '../../../../../types/ui';
 import { AppButton } from '../../../AppButton/ui/AppButton';
 import { Text } from '../../../Text/Text';
-import { VStack } from '../../../Stack/VStack/VStack';
+import { VStack } from '../../../../common/Stack/VStack/VStack';
 import styles from './ListBox.module.scss';
 import commonStyles from '../../styles/popups.module.scss';
 

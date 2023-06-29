@@ -17,7 +17,7 @@ import {
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import styles from './ArticleListItem.module.scss';
 import { AppRoutes } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppImage } from '@/shared/ui/common/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 interface ArticleListItemProps {

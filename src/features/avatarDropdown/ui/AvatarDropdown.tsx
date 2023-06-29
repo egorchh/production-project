@@ -1,13 +1,14 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { MenuDropdown, MenuDropdownItem } from '@/shared/ui/deprecated/Popups';
+import { MenuDropdownItem } from '@/shared/ui/deprecated/Popups';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import styles from './AvatarDropdown.module.scss';
 import { AppRoutes } from '@/shared/const/router';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { AvatarDropdown as AvatarDropdownRedesigned } from './redesigned/AvatarDropdown';
+import { AvatarDropdown as AvatarDropdownDeprecated } from './deprecated/AvatarDropdown';
 
 interface avatarDropdownProps {
     onShowModal: VoidFunction;
@@ -60,11 +61,10 @@ export const AvatarDropdown = memo(({ onShowModal }: avatarDropdownProps) => {
     }
 
     return (
-        <MenuDropdown
-            className={styles.dropdown}
-            items={dropdownItems}
-            dropdownDirection="left"
-            trigger={<Avatar src={authData?.avatar} size={35} />}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<AvatarDropdownRedesigned dropdownItems={dropdownItems} authData={authData} />}
+            off={<AvatarDropdownDeprecated dropdownItems={dropdownItems} authData={authData} />}
         />
     );
 });

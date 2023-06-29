@@ -1,14 +1,11 @@
 import React, { memo, useCallback, useState } from 'react';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { NotificationButton } from '@/features/notificationButton';
-import { AvatarDropdown } from '@/features/avatarDropdown';
-import { LoginModal } from '@/features/AuthByUsername';
-import { HStack } from '@/shared/ui/deprecated/Stack';
-import styles from './Navbar.module.scss';
+import { Navbar as NavbarRedesigned } from './redesigned/Navbar';
+import { Navbar as NavbarDeprecated } from './deprecated/Navbar';
 
 export interface NavbarProps {
   className?: string;
+
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -26,25 +23,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         <ToggleFeatures
             feature="isAppRedesigned"
             on={(
-                <nav
-                    className={classNames(styles.navbar_redesigned, {}, [className])}
-                >
-                    <NotificationButton />
-                    <AvatarDropdown onShowModal={onShowAuthModal} />
-                    <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
-                </nav>
+                <NavbarRedesigned
+                    className={className}
+                    isOpenAuthModal={isOpenAuthModal}
+                    onCloseAuthModal={onCloseAuthModal}
+                    onShowAuthModal={onShowAuthModal}
+                />
             )}
             off={(
-                <HStack
-                    className={classNames(styles.navbar, {}, [className])}
-                    justify="end"
-                    align="center"
-                    fullWidth
-                >
-                    <NotificationButton />
-                    <AvatarDropdown onShowModal={onShowAuthModal} />
-                    <LoginModal isOpen={isOpenAuthModal} onClose={onCloseAuthModal} />
-                </HStack>
+                <NavbarDeprecated
+                    className={className}
+                    isOpenAuthModal={isOpenAuthModal}
+                    onCloseAuthModal={onCloseAuthModal}
+                    onShowAuthModal={onShowAuthModal}
+                />
             )}
         />
     );

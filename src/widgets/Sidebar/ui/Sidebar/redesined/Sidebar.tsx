@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/common/Stack';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import LeftArrow from '@/shared/assets/icons/left-arrow.svg';
 import styles from './Sidebar.module.scss';

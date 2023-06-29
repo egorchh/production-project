@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '../AppImage';
+import { AppImage } from '../../common/AppImage';
 import styles from './Avatar.module.scss';
 import { Skeleton } from '../Skeleton/Skeleton';
 import { Icon } from '../Icon/Icon';

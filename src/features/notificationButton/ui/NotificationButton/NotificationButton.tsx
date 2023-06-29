@@ -2,12 +2,11 @@ import React, { memo, useCallback, useState } from 'react';
 import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import NotificationsIcon from '@/shared/assets/icons/notifications.svg';
-import { NotificationList } from '@/entities/Notification';
-import { Popover } from '@/shared/ui/deprecated/Popups';
 import { DropdownDirection } from '@/shared/types/ui';
-import { BottomSheet } from '@/shared/ui/deprecated/BottomSheet';
 import { useDevice } from '@/shared/lib/hooks/useDevice/useDevice';
-import styles from './NotificationButton.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { NotificationButton as NotificationButtonDeprecated } from './deprecated/NotificationButton';
+import { NotificationButton as NotificationButtonRedesigned } from './redesigned/NotificationButton';
 
 interface NotificationButtonProps {
     invertedColor?: boolean;
@@ -36,23 +35,25 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     );
 
     return (
-        <div>
-            {isMobile ? (
-                <>
-                    {trigger}
-                    <BottomSheet isOpen={isBottomSheetOpen} onClose={onCloseBottomSheet}>
-                        <NotificationList />
-                    </BottomSheet>
-                </>
-            ) : (
-                <Popover
-                    unmount
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <NotificationButtonRedesigned
                     dropdownDirection={dropdownDirection}
-                    trigger={trigger}
-                >
-                    <NotificationList className={styles.notifications} />
-                </Popover>
+                    isMobile={isMobile}
+                    onCloseBottomSheet={onCloseBottomSheet}
+                    onOpenBottomSheet={onOpenBottomSheet}
+                />
             )}
-        </div>
+            off={(
+                <NotificationButtonDeprecated
+                    invertedColor={invertedColor}
+                    dropdownDirection={dropdownDirection}
+                    isMobile={isMobile}
+                    onCloseBottomSheet={onCloseBottomSheet}
+                    onOpenBottomSheet={onOpenBottomSheet}
+                />
+            )}
+        />
     );
 });
